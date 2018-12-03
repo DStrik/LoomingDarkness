@@ -56,7 +56,7 @@ TilemapRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 46f2635128f353a43bb71cdee2886150, type: 2}
+  - {fileID: 2100000, guid: 0630ca36f651cd844b483133702fb3d5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
