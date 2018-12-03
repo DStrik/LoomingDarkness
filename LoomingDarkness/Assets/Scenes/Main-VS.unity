@@ -122,11 +122,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4775627346736946, guid: 14054b0369afcc947bb3a03315813343, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.2896788
+      value: 3.67
       objectReference: {fileID: 0}
     - target: {fileID: 4775627346736946, guid: 14054b0369afcc947bb3a03315813343, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.2831705
+      value: -0.26
       objectReference: {fileID: 0}
     - target: {fileID: 4775627346736946, guid: 14054b0369afcc947bb3a03315813343, type: 2}
       propertyPath: m_LocalPosition.z
@@ -166,6 +166,10 @@ Prefab:
         type: 2}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4775627346736946, guid: 14054b0369afcc947bb3a03315813343, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 3.824
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14054b0369afcc947bb3a03315813343, type: 2}
@@ -247,3 +251,54 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2111214281
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4145088824788952, guid: da52b23b2e8859b4cbbbe6757da5a552, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 4145088824788952, guid: da52b23b2e8859b4cbbbe6757da5a552, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4145088824788952, guid: da52b23b2e8859b4cbbbe6757da5a552, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.100977905
+      objectReference: {fileID: 0}
+    - target: {fileID: 4145088824788952, guid: da52b23b2e8859b4cbbbe6757da5a552, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4145088824788952, guid: da52b23b2e8859b4cbbbe6757da5a552, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4145088824788952, guid: da52b23b2e8859b4cbbbe6757da5a552, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4145088824788952, guid: da52b23b2e8859b4cbbbe6757da5a552, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4145088824788952, guid: da52b23b2e8859b4cbbbe6757da5a552, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 212322645305190346, guid: da52b23b2e8859b4cbbbe6757da5a552,
+        type: 2}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936599512342544, guid: da52b23b2e8859b4cbbbe6757da5a552, type: 2}
+      propertyPath: m_Name
+      value: Interactable torch
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: da52b23b2e8859b4cbbbe6757da5a552, type: 2}
+  m_IsPrefabAsset: 0
