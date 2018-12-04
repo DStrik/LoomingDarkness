@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class HealthHandler : MonoBehaviour {
 
-	public HealthBar healthBar;
+	public GameObject healthBar;
+	private HealthBar healthBarScript;
 	private HealthSystem healthSystem;
 	private float secDelay = 0;
 	public float delayPeriod = 1;
@@ -12,8 +13,7 @@ public class HealthHandler : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		healthSystem = new HealthSystem(100);
-
-		healthBar.Setup(healthSystem);
+		healthBar.GetComponent<HealthBar>().Setup(healthSystem);
 	}
 
 	void Update() {
@@ -23,7 +23,7 @@ public class HealthHandler : MonoBehaviour {
 			if(Time.time > secDelay ) {
 				secDelay += delayPeriod;
 				healthSystem.damage(1);
-			}
+			}			
 		}
 		else
 		{
@@ -31,6 +31,10 @@ public class HealthHandler : MonoBehaviour {
 				secDelay+= delayPeriod;
 			}
 		}
+	}
+
+	public void heal(int healAmount) {
+		healthSystem.heal(healAmount);
 	}
 	
 }

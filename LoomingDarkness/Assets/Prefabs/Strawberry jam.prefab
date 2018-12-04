@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storeable: 1
-  type: 
+  type: Food
 --- !u!212 &212036404237787974
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -7,6 +7,7 @@ public class PlayerInteract : MonoBehaviour {
 	public InteractableObject currInterObjScript = null;
 	public Inventory inventory;
 	public Animator animator;
+	public HealthHandler healthHandler;
 	private bool usingTorch = false;
 
 	void Update() {
@@ -33,6 +34,16 @@ public class PlayerInteract : MonoBehaviour {
 				usingTorch = false;
 				animator.SetBool("Torch", usingTorch);
 				// make torch item stop depleting
+			}
+		}
+
+		if(Input.GetButtonDown("Eat food")) {
+			GameObject food = inventory.FindItemByType("Food");
+			if(food != null) {
+				Debug.Log("Pressing Eat food, food item: " + food.name);
+				healthHandler.heal(50); // change value to food heal value in future
+				inventory.RemoveItem(food);
+				Destroy(food);
 			}
 		}
 	}
