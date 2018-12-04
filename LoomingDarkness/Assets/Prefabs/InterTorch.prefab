@@ -21,9 +21,11 @@ GameObject:
   - component: {fileID: 4145088824788952}
   - component: {fileID: 212322645305190346}
   - component: {fileID: 95262944388029966}
+  - component: {fileID: 58162291161510300}
+  - component: {fileID: 114587223995236364}
   m_Layer: 0
   m_Name: InterTorch
-  m_TagString: Untagged
+  m_TagString: interObj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,6 +43,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &58162291161510300
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1936599512342544}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.75
 --- !u!95 &95262944388029966
 Animator:
   serializedVersion: 3
@@ -59,6 +76,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114587223995236364
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1936599512342544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ab7a9b53dad05f4e979131ae4d9ed53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storeable: 1
 --- !u!212 &212322645305190346
 SpriteRenderer:
   m_ObjectHideFlags: 1
