@@ -22,4 +22,15 @@ public class Inventory : MonoBehaviour {
 		}
 		return false;
 	}
+
+	public GameObject FindItemByType(string type) {
+		for(int i = 0; i < inventory.Length; i++) {
+			if(inventory[i] != null) {
+				if(inventory[i].GetComponent<InteractableObject>().type == type) {
+					return inventory[i];
+				}
+			}
+		}
+		return null;
+	}
 }
