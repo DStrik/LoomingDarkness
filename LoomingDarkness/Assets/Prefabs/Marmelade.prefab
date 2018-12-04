@@ -22,9 +22,11 @@ GameObject:
   - component: {fileID: 212376663321400174}
   - component: {fileID: 95023144190640176}
   - component: {fileID: 61850649699543418}
+  - component: {fileID: 114710934224391622}
+  - component: {fileID: 58182538183718750}
   m_Layer: 0
   m_Name: Marmelade
-  m_TagString: Untagged
+  m_TagString: interObj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,6 +44,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &58182538183718750
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1120234752534344}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.36
 --- !u!61 &61850649699543418
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -85,6 +102,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114710934224391622
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1120234752534344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ab7a9b53dad05f4e979131ae4d9ed53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storeable: 1
+  type: 
 --- !u!212 &212376663321400174
 SpriteRenderer:
   m_ObjectHideFlags: 1
