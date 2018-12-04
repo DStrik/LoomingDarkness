@@ -6,7 +6,7 @@ public class HealthHandler : MonoBehaviour {
 
 	public HealthBar healthBar;
 	private HealthSystem healthSystem;
-	public float secDelay = 0;
+	private float secDelay = 0;
 	public float delayPeriod = 1;
 
 	// Use this for initialization
@@ -17,9 +17,19 @@ public class HealthHandler : MonoBehaviour {
 	}
 
 	void Update() {
-		if(Time.time > secDelay) {
-			secDelay += delayPeriod;
-			healthSystem.damage(1);
+		Vector3 move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
+
+		if(transform.position != transform.position + move){
+			if(Time.time > secDelay ) {
+				secDelay += delayPeriod;
+				healthSystem.damage(1);
+			}
+		}
+		else
+		{
+			if(Time.time > secDelay) {
+				secDelay+= delayPeriod;
+			}
 		}
 	}
 	
