@@ -154,6 +154,7 @@ MonoBehaviour:
   currInterObj: {fileID: 0}
   currInterObjScript: {fileID: 0}
   inventory: {fileID: 114407773197703304}
+  animator: {fileID: 95201421175048206}
 --- !u!212 &212448942693841926
 SpriteRenderer:
   m_ObjectHideFlags: 1
