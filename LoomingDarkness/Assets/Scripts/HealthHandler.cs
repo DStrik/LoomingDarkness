@@ -32,8 +32,16 @@ public class HealthHandler : MonoBehaviour {
 		}
 	}
 
+	private IEnumerator healRoutine(int healAmount) {
+		for(int i = 1; i < healAmount; i++) {
+			healthSystem.heal(2);
+
+			yield return new WaitForSeconds(0.01f);
+		}
+	}
+
 	public void heal(int healAmount) {
-		healthSystem.heal(healAmount);
+		StartCoroutine(healRoutine(healAmount));
 	}
 	
 }

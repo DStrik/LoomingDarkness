@@ -21,9 +21,7 @@ public class PlayerInteract : MonoBehaviour {
 				}
 			}
 			else if(currInterObjScript.type == "Fountain") {
-				for(int i = 0; i < 100; i++) {
-					healthHandler.heal(100);
-				}
+				healthHandler.heal(100);
 			}
 		}
 
