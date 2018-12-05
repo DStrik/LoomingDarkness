@@ -178,7 +178,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1370116506155906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.25, y: -2.5700002, z: -0.100977905}
+  m_LocalPosition: {x: 2.06, y: -2.32, z: -0.100977905}
   m_LocalScale: {x: 3.824, y: 4, z: 1}
   m_Children:
   - {fileID: 4308031356373826}
@@ -360,6 +360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   light: {fileID: 1923505472036338}
   torch: {fileID: 0}
+  animator: {fileID: 95201421175048206}
   lightRatio: 0.2
   torchDepletion: 1
   usingTorch: 0
@@ -395,7 +396,6 @@ MonoBehaviour:
   currInterObj: {fileID: 0}
   currInterObjScript: {fileID: 0}
   inventory: {fileID: 114407773197703304}
-  animator: {fileID: 95201421175048206}
   healthHandler: {fileID: 114064605744769176}
   lightHandler: {fileID: 114371100907805752}
 --- !u!114 &114697105949246178

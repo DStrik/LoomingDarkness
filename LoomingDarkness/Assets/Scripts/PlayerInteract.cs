@@ -6,7 +6,6 @@ public class PlayerInteract : MonoBehaviour {
 	public GameObject currInterObj = null;
 	public InteractableObject currInterObjScript = null;
 	public Inventory inventory;
-	public Animator animator;
 	public HealthHandler healthHandler;
 	public LightHandler lightHandler;
 	
@@ -27,16 +26,14 @@ public class PlayerInteract : MonoBehaviour {
 
 		if(Input.GetButtonDown("Use torch")) {
 			GameObject torch = inventory.FindItemByType("Torch");
-			Debug.Log("Pressing torch, torch item: " + torch.name);
+			//Debug.Log("Pressing torch, torch item: " + torch.name);
 			if(torch != null && !lightHandler.usingTorch) {
 				lightHandler.turnOnTorch(torch);
-				animator.SetBool("Torch", lightHandler.usingTorch);
 				// make torch item start depleting
 			}
 			else {
 				Debug.Log("turn off torch");
 				lightHandler.turnOffTorch();
-				animator.SetBool("Torch", lightHandler.usingTorch);
 				// make torch item stop depleting
 			}
 		}
