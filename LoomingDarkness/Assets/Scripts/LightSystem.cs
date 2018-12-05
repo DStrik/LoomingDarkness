@@ -16,6 +16,11 @@ public class LightSystem {
 		return light;
 	}
 
+	public void updateLight(float status) {
+		
+		light = status;
+	}
+
 	public void deplete(float deplete) {
 		light -= deplete;
 
