@@ -40,5 +40,6 @@ public class LightHandler : MonoBehaviour {
 		}
 		this.torch = null;
 		usingTorch = false;
+		light.transform.localScale = new Vector3(0,0,1);
 	}
 }
