@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour {
@@ -17,6 +18,11 @@ public class PlayerInteract : MonoBehaviour {
 					currInterObj.SendMessage("setInactive");
 					currInterObj = null;
 					currInterObjScript = null;
+				}
+			}
+			else if(currInterObjScript.type == "Fountain") {
+				for(int i = 0; i < 100; i++) {
+					healthHandler.heal(100);
 				}
 			}
 		}
