@@ -26,9 +26,11 @@ GameObject:
   - component: {fileID: 58780545030315148}
   - component: {fileID: 58448737721220442}
   - component: {fileID: 114883340083252584}
+  - component: {fileID: 58153281635341070}
+  - component: {fileID: 114452299248820860}
   m_Layer: 0
   m_Name: Fountain
-  m_TagString: Untagged
+  m_TagString: interObj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,6 +48,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &58153281635341070
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1672905065749202}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.02, y: -0.01}
+  serializedVersion: 2
+  m_Radius: 0.82586825
 --- !u!58 &58448737721220442
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -144,6 +161,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114452299248820860
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1672905065749202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ab7a9b53dad05f4e979131ae4d9ed53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storeable: 0
+  type: Fountain
 --- !u!114 &114883340083252584
 MonoBehaviour:
   m_ObjectHideFlags: 1
