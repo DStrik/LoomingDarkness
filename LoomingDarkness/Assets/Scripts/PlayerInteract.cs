@@ -25,6 +25,7 @@ public class PlayerInteract : MonoBehaviour {
 		}
 
 		if(Input.GetButtonDown("Use torch")) {
+			Debug.Log("slot1: " + inventory.inventory[0]);
 			GameObject torch = inventory.FindItemByType("Torch");
 			//Debug.Log("Pressing torch, torch item: " + torch.name);
 			if(torch != null && !lightHandler.usingTorch) {

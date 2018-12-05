@@ -45,7 +45,6 @@ public class Inventory : MonoBehaviour {
 	}
 
 	void Update() {
-		Debug.Log("inventory update");
 		for(int i = 0; i < inventory.Length; i++) {
 			if(inventory[i] == null) {
 				for(int k = i + 1; k < inventory.Length; k++) {
@@ -57,6 +56,7 @@ public class Inventory : MonoBehaviour {
 						break;
 					}
 				}
+				inventorySlots[i].image.overrideSprite = null;
 			}
 		}
 	}
