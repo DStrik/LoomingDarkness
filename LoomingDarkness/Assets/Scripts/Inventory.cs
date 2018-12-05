@@ -1,15 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour {
 
-	public GameObject[] inventory = new GameObject[6];
-
+	public GameObject[] inventory = new GameObject[4];
+	public Button[] inventorySlots = new Button[4];
 	public bool AddItem(GameObject item) {
 		for(int i = 0; i < inventory.Length; i++) {
 			if(inventory[i] == null) {
 				inventory[i] = item;
+				inventorySlots[i].image.overrideSprite = item.GetComponent<InteractableObject>().image;
 				Debug.Log(item.name + " was added to the inventory");
 				return true;
 			}
@@ -22,6 +24,7 @@ public class Inventory : MonoBehaviour {
 		for(int i = 0; i < inventory.Length; i++) {
 			if(inventory[i] == item) {
 				inventory[i] = null;
+				inventorySlots[i].image.overrideSprite = null;
 				Debug.Log(item.name + " was removed from inventory");
 				return true;
 			}
@@ -39,5 +42,22 @@ public class Inventory : MonoBehaviour {
 			}
 		}
 		return null;
+	}
+
+	void Update() {
+		Debug.Log("inventory update");
+		for(int i = 0; i < inventory.Length; i++) {
+			if(inventory[i] == null) {
+				for(int k = i + 1; k < inventory.Length; k++) {
+					if(inventory[k] != null) {
+						inventory[i] = inventory[k];
+						inventory[k] = null;
+						inventorySlots[i].image.overrideSprite = inventorySlots[k].image.overrideSprite;
+						inventorySlots[k].image.overrideSprite = null;
+						break;
+					}
+				}
+			}
+		}
 	}
 }
