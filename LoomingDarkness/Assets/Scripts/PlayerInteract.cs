@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour {
@@ -9,7 +8,8 @@ public class PlayerInteract : MonoBehaviour {
 	public Inventory inventory;
 	public Animator animator;
 	public HealthHandler healthHandler;
-	private bool usingTorch = false;
+	public LightHandler lightHandler;
+	
 
 	void Update() {
 		if(Input.GetButtonDown("Interact") && currInterObj) {
@@ -28,15 +28,15 @@ public class PlayerInteract : MonoBehaviour {
 		if(Input.GetButtonDown("Use torch")) {
 			GameObject torch = inventory.FindItemByType("Torch");
 			Debug.Log("Pressing torch, torch item: " + torch.name);
-			if(torch != null && !usingTorch) {
-				usingTorch = true;
-				animator.SetBool("Torch", usingTorch);
+			if(torch != null && !lightHandler.usingTorch) {
+				lightHandler.turnOnTorch(torch);
+				animator.SetBool("Torch", lightHandler.usingTorch);
 				// make torch item start depleting
 			}
 			else {
 				Debug.Log("turn off torch");
-				usingTorch = false;
-				animator.SetBool("Torch", usingTorch);
+				lightHandler.turnOffTorch();
+				animator.SetBool("Torch", lightHandler.usingTorch);
 				// make torch item stop depleting
 			}
 		}

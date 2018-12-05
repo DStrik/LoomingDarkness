@@ -10,4 +10,9 @@ public class InteractableObject : MonoBehaviour {
 	public void setInactive() {
 		gameObject.SetActive(false);
 	}
+
+/*	public void disableRendering() {
+		gameObject.GetComponent<SpriteRenderer>().enabled = false;
+	}
+	*/
 }

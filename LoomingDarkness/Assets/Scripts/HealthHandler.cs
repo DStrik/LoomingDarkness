@@ -5,7 +5,6 @@ using UnityEngine;
 public class HealthHandler : MonoBehaviour {
 
 	public GameObject healthBar;
-	private HealthBar healthBarScript;
 	private HealthSystem healthSystem;
 	private float secDelay = 0;
 	public float delayPeriod = 1;
