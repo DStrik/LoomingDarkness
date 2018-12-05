@@ -360,6 +360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   light: {fileID: 1923505472036338}
   torch: {fileID: 0}
+  animator: {fileID: 95201421175048206}
   lightRatio: 0.2
   torchDepletion: 1
   usingTorch: 0
@@ -395,7 +396,6 @@ MonoBehaviour:
   currInterObj: {fileID: 0}
   currInterObjScript: {fileID: 0}
   inventory: {fileID: 114407773197703304}
-  animator: {fileID: 95201421175048206}
   healthHandler: {fileID: 114064605744769176}
   lightHandler: {fileID: 114371100907805752}
 --- !u!114 &114697105949246178
