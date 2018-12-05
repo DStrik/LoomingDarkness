@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212752993096328194}
   - component: {fileID: 61868482211218314}
   - component: {fileID: 61829451004919192}
+  - component: {fileID: 114858524501283462}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Untagged
@@ -92,6 +93,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5588244, y: 1.3042431}
   m_EdgeRadius: 0
+--- !u!114 &114858524501283462
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1405919969824946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0184ff86886f974d95dfead14754f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MultiplicativeColor: {r: 0, g: 0, b: 0, a: 0.27450982}
+  AdditiveColor: {r: 0, g: 0, b: 0, a: 0}
+  Material: {fileID: 2100000, guid: 0a8c132f813f5514b9f5b48ff3956482, type: 2}
+  LightObstacleScale: 1
 --- !u!212 &212752993096328194
 SpriteRenderer:
   m_ObjectHideFlags: 1
