@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 61037992603844896}
   - component: {fileID: 58780545030315148}
   - component: {fileID: 58448737721220442}
+  - component: {fileID: 114880006238788758}
   m_Layer: 0
   m_Name: Fountain
   m_TagString: Untagged
@@ -143,6 +144,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114880006238788758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1672905065749202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0184ff86886f974d95dfead14754f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MultiplicativeColor: {r: 0.20392159, g: 0.20392159, b: 0.20392159, a: 0.23137255}
+  AdditiveColor: {r: 0, g: 0, b: 0, a: 0}
+  Material: {fileID: 2100000, guid: 0a8c132f813f5514b9f5b48ff3956482, type: 2}
+  LightObstacleScale: 1
 --- !u!212 &212459714584656462
 SpriteRenderer:
   m_ObjectHideFlags: 1
