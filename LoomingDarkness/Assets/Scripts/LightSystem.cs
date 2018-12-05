@@ -18,7 +18,7 @@ public class LightSystem {
 
 	public void updateLight(float status) {
 		
-		light = status;
+		this.light = status;
 	}
 
 	public void deplete(float deplete) {
