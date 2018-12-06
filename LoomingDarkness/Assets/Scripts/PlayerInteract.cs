@@ -25,6 +25,7 @@ public class PlayerInteract : MonoBehaviour {
 		}
 
 		if(Input.GetButtonDown("Use torch")) {
+			Debug.Log("slot1: " + inventory.inventory[0]);
 			GameObject torch = inventory.FindItemByType("Torch");
 			//Debug.Log("Pressing torch, torch item: " + torch.name);
 			if(torch != null && !lightHandler.usingTorch) {
@@ -44,7 +45,6 @@ public class PlayerInteract : MonoBehaviour {
 				Debug.Log("Pressing Eat food, food item: " + food.name);
 				healthHandler.heal(50); // change value to food heal value in future
 				inventory.RemoveItem(food);
-				Destroy(food);
 			}
 		}
 	}
