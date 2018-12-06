@@ -30,11 +30,15 @@ public class PlayerInteract : MonoBehaviour {
 			//Debug.Log("Pressing torch, torch item: " + torch.name);
 			if(torch != null && !lightHandler.usingTorch) {
 				lightHandler.turnOnTorch(torch);
+				FindObjectOfType<AudioManager>().Play("TorchOn");
+				FindObjectOfType<AudioManager>().Play("SmallBurn");
 				// make torch item start depleting
 			}
 			else {
 				Debug.Log("turn off torch");
 				lightHandler.turnOffTorch();
+				FindObjectOfType<AudioManager>().Stop("SmallBurn");
+				FindObjectOfType<AudioManager>().Play("ExtinguishTorch");
 				// make torch item stop depleting
 			}
 		}
