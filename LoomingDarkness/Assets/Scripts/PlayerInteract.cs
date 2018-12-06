@@ -17,6 +17,7 @@ public class PlayerInteract : MonoBehaviour {
 					currInterObj.SendMessage("setInactive");
 					currInterObj = null;
 					currInterObjScript = null;
+					FindObjectOfType<AudioManager>().Play("ItemPickup");					
 				}
 			}
 			else if(currInterObjScript.type == "Fountain") {
@@ -46,11 +47,15 @@ public class PlayerInteract : MonoBehaviour {
 			//Debug.Log("Pressing torch, torch item: " + torch.name);
 			if(torch != null && !lightHandler.usingTorch) {
 				lightHandler.turnOnTorch(torch);
+				FindObjectOfType<AudioManager>().Play("TorchOn");
+				FindObjectOfType<AudioManager>().Play("SmallBurn");
 				// make torch item start depleting
 			}
-			else {
+			else if(torch !=null && lightHandler.usingTorch) {
 				Debug.Log("turn off torch");
 				lightHandler.turnOffTorch();
+				FindObjectOfType<AudioManager>().Stop("SmallBurn");
+				FindObjectOfType<AudioManager>().Play("ExtinguishTorch");
 				// make torch item stop depleting
 			}
 		}
@@ -60,6 +65,7 @@ public class PlayerInteract : MonoBehaviour {
 			if(food != null) {
 				Debug.Log("Pressing Eat food, food item: " + food.name);
 				healthHandler.heal(50); // change value to food heal value in future
+				FindObjectOfType<AudioManager>().Play("Eat");
 				inventory.RemoveItem(food);
 			}
 		}

@@ -8,7 +8,7 @@ public class LightHandler : MonoBehaviour {
 	public GameObject charLight;
 	public GameObject torch;
 	public Animator animator;
-	public float lightRatio = (float) 0.2;
+	public float lightRatio = 0.1f;
 	public float torchDepletion = 1;
 	public bool usingTorch = false;
 	public Inventory inventory;
@@ -30,6 +30,8 @@ public class LightHandler : MonoBehaviour {
 				usingTorch = false;
 				animator.SetBool("Torch", usingTorch);
 				inventory.RemoveItem(torch);
+				FindObjectOfType<AudioManager>().Stop("SmallBurn");
+				FindObjectOfType<AudioManager>().Play("ExtinguishTorch");
 				charLight.transform.localScale = new Vector3(0,0,1);
 			}
 		}

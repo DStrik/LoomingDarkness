@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114883340083252584}
   - component: {fileID: 58153281635341070}
   - component: {fileID: 114452299248820860}
+  - component: {fileID: 82328072947423504}
   m_Layer: 0
   m_Name: Fountain
   m_TagString: interObj
@@ -143,6 +144,128 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.58583665, y: 0.4738803}
   m_EdgeRadius: 0
+--- !u!82 &82328072947423504
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1672905065749202}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: cd479a9a22408f844a7c2aa9844b5020, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 10
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.1
+      value: 1
+      inSlope: -7.3060956
+      outSlope: -7.3060956
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.16845305
+    - serializedVersion: 3
+      time: 0.24531859
+      value: 0.44223785
+      inSlope: -1.7267286
+      outSlope: -1.7267286
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.63852775
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.36469117
+      value: 0.2436142
+      inSlope: -1.0964395
+      outSlope: -1.0964395
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.79156786
+    - serializedVersion: 3
+      time: 0.6075333
+      value: 0.09107971
+      inSlope: -0.24495246
+      outSlope: -0.24495246
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.99999875
+    - serializedVersion: 3
+      time: 0.91752625
+      value: 0
+      inSlope: -0.10003988
+      outSlope: -0.10003988
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &95806890292109718
 Animator:
   serializedVersion: 3
@@ -173,7 +296,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storeable: 0
+  openable: 0
+  locked: 0
+  unlocker: {fileID: 0}
   type: Fountain
+  image: {fileID: 0}
 --- !u!114 &114883340083252584
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -223,7 +350,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 5ff1c5c1164cad94f9df1b37726d5395, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
