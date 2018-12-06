@@ -2,23 +2,23 @@
 public class HealthSystem {
 
 	public event EventHandler OnHealthChange;
-	private int health;
-	private int healthMax;
+	private float health;
+	private float healthMax;
 
-	public HealthSystem(int healthMax) {
+	public HealthSystem(float healthMax) {
 		this.healthMax = healthMax;
 		health = healthMax;
 	}
 
-	public int getHealth() {
+	public float getHealth() {
 		return health;
 	}
 
 	public float getHealthPercentage() {
-		return (float) health / healthMax;
+		return health / healthMax;
 	}
 
-	public void damage(int damageAmount) {
+	public void damage(float damageAmount) {
 		health -= damageAmount;
 
 		if (health < 0) {
@@ -30,7 +30,7 @@ public class HealthSystem {
 		}
 	}
 
-	public void heal(int healAmount) {
+	public void heal(float healAmount) {
 		health += healAmount;
 
 		if (health > healthMax) {
