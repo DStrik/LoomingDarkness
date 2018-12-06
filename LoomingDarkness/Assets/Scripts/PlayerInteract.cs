@@ -22,6 +22,22 @@ public class PlayerInteract : MonoBehaviour {
 			else if(currInterObjScript.type == "Fountain") {
 				healthHandler.heal(100);
 			}
+			else if(currInterObjScript.openable) {
+				if(currInterObjScript.locked) {
+					if(inventory.FindItem(currInterObjScript.unlocker)) {
+						currInterObjScript.locked = false;
+						inventory.RemoveItem(currInterObjScript.unlocker);
+						currInterObjScript.setInactive();
+						Debug.Log(currInterObj + " unlocked");
+					}
+					else {
+						Debug.Log(currInterObj + " not unlocked");
+					}
+				}
+				else {
+					currInterObjScript.setInactive();
+				}
+			}
 		}
 
 		if(Input.GetButtonDown("Use torch")) {
