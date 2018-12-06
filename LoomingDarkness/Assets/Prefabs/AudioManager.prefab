@@ -54,7 +54,25 @@ MonoBehaviour:
   sounds:
   - name: Theme
     clip: {fileID: 8300000, guid: b7a43e602d276a0419db66e8855289e1, type: 3}
-    volume: 0.5
+    volume: 0.2
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: TorchOn
+    clip: {fileID: 8300000, guid: 19b0537433862ef4e84616d54da4897b, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ExtinguishTorch
+    clip: {fileID: 8300000, guid: 2a93eecf155d9f042a5118c1b40ddc61, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SmallBurn
+    clip: {fileID: 8300000, guid: d7b21933a0d3d8548b5d54f43a1d7ee1, type: 3}
+    volume: 1
     pitch: 1
     loop: 1
     source: {fileID: 0}
