@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class Inventory : MonoBehaviour {
 
 	public GameObject[] inventory = new GameObject[4];
 	public Button[] inventorySlots = new Button[4];
+	public event EventHandler OnInventoryChange;
 	public bool AddItem(GameObject item) {
 		for(int i = 0; i < inventory.Length; i++) {
 			if(inventory[i] == null) {
@@ -26,6 +28,8 @@ public class Inventory : MonoBehaviour {
 				inventory[i] = null;
 				inventorySlots[i].image.overrideSprite = null;
 				Debug.Log(item.name + " was removed from inventory");
+				rearrangeArray();
+				Destroy(item);
 				return true;
 			}
 		}
@@ -44,7 +48,8 @@ public class Inventory : MonoBehaviour {
 		return null;
 	}
 
-	void Update() {
+	void rearrangeArray() {
+
 		for(int i = 0; i < inventory.Length; i++) {
 			if(inventory[i] == null) {
 				for(int k = i + 1; k < inventory.Length; k++) {
@@ -55,9 +60,6 @@ public class Inventory : MonoBehaviour {
 						inventorySlots[k].image.overrideSprite = null;
 						break;
 					}
-				}
-				if(inventorySlots[i].image.sprite != null) {	
-					inventorySlots[i].image.overrideSprite = null;
 				}
 			}
 		}

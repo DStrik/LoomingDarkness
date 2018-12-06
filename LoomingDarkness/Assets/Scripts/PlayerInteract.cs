@@ -45,7 +45,6 @@ public class PlayerInteract : MonoBehaviour {
 				Debug.Log("Pressing Eat food, food item: " + food.name);
 				healthHandler.heal(50); // change value to food heal value in future
 				inventory.RemoveItem(food);
-				Destroy(food);
 			}
 		}
 	}
