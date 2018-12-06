@@ -48,6 +48,15 @@ public class Inventory : MonoBehaviour {
 		return null;
 	}
 
+	public bool FindItem(GameObject item) {
+		for(int i = 0; i < inventory.Length; i++) {
+			if(inventory[i] == item) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	void rearrangeArray() {
 
 		for(int i = 0; i < inventory.Length; i++) {
