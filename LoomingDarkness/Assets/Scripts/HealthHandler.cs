@@ -38,6 +38,10 @@ public class HealthHandler : MonoBehaviour {
 				secDelay+= delayPeriod;
 			}
 		}
+
+		if(healthSystem.getHealth() <= 0) {
+			FindObjectOfType<GameOver>().EndGame();
+		}
 	}
 
 	private IEnumerator healRoutine(int healAmount) {

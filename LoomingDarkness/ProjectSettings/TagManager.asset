@@ -6,6 +6,7 @@ TagManager:
   tags:
   - interObj
   - SafeZone
+  - Character
   layers:
   - Default
   - TransparentFX
