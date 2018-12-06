@@ -29,6 +29,7 @@ public class LightHandler : MonoBehaviour {
 				usingTorch = false;
 				animator.SetBool("Torch", usingTorch);
 				Destroy(torch);
+				light.transform.localScale = new Vector3(0,0,1);
 			}
 		}
 	}
