@@ -65,8 +65,8 @@ public class PlayerInteract : MonoBehaviour {
 			if(food != null) {
 				Debug.Log("Pressing Eat food, food item: " + food.name);
 				healthHandler.heal(50); // change value to food heal value in future
-				FindObjectOfType<AudioManager>().Play("Eat");
 				inventory.RemoveItem(food);
+				FindObjectOfType<AudioManager>().Play("Eat");
 			}
 		}
 	}
