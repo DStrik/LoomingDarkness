@@ -15,12 +15,10 @@ public class DialogTrigger : MonoBehaviour {
 		controls.SetActive(show);
 	}
 	void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("Hello world");
 		show = true;
     }
 
     void OnTriggerExit2D(Collider2D other) {
-        Debug.Log("Bye World");
 		show = false;
     }
 }
