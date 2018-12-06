@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class basicmovement : MonoBehaviour {
-	public int speed = 1;
+	public float speed = 1.5f;
 	public Animator animator;
 
 	// Update is called once per frame
 	void Update () {
 		Vector3 move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
 		if(Input.GetKeyDown(KeyCode.LeftShift)) {
-			speed = 2;
+			speed = 2.5f;
 		}
 		if(Input.GetKeyUp(KeyCode.LeftShift)) {
-			speed = 1;
+			speed = 1.5f;
 		}
 		animator.SetFloat("Horizontal", move.x);
 		animator.SetFloat("Vertical", move.y);
