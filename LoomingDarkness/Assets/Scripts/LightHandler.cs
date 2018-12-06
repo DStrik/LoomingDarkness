@@ -51,4 +51,10 @@ public class LightHandler : MonoBehaviour {
 		animator.SetBool("Torch", usingTorch);
 		charLight.transform.localScale = new Vector3(0,0,1);
 	}
+
+	void OnTriggerEnter2D(Collider2D other) {
+		if(other.CompareTag("SafeZone")){
+			turnOffTorch();
+		}
+	}
 }

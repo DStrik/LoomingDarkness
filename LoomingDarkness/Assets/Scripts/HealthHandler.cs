@@ -6,8 +6,10 @@ public class HealthHandler : MonoBehaviour {
 
 	public GameObject healthBar;
 	private HealthSystem healthSystem;
+	public bool inSafeRoom = true;
 	private float secDelay = 0;
 	public float delayPeriod = 1;
+	private float damage = 1;
 
 	// Use this for initialization
 	void Start () {
@@ -17,11 +19,17 @@ public class HealthHandler : MonoBehaviour {
 
 	void Update() {
 		Vector3 move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
-
-		if(transform.position != transform.position + move){
+		
+		if(Input.GetKeyDown(KeyCode.LeftShift)){
+			damage = (float) 2.5;
+		}
+		if(Input.GetKeyUp(KeyCode.LeftShift)) {
+			damage = 1;
+		}
+		if(transform.position != transform.position + move && !inSafeRoom){
 			if(Time.time > secDelay ) {
 				secDelay += delayPeriod;
-				healthSystem.damage(1);
+				healthSystem.damage(damage);
 			}			
 		}
 		else
@@ -42,6 +50,18 @@ public class HealthHandler : MonoBehaviour {
 
 	public void heal(int healAmount) {
 		StartCoroutine(healRoutine(healAmount));
+	}
+
+	void OnTriggerExit2D(Collider2D other) {
+		if(other.CompareTag("SafeZone")){
+			inSafeRoom = false;
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D other) {
+		if(other.CompareTag("SafeZone")){
+			inSafeRoom = true;
+		}
 	}
 	
 }

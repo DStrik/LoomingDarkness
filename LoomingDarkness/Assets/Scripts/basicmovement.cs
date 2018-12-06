@@ -9,7 +9,12 @@ public class basicmovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Vector3 move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
-		
+		if(Input.GetKeyDown(KeyCode.LeftShift)) {
+			speed = 2;
+		}
+		if(Input.GetKeyUp(KeyCode.LeftShift)) {
+			speed = 1;
+		}
 		animator.SetFloat("Horizontal", move.x);
 		animator.SetFloat("Vertical", move.y);
 		animator.SetFloat("Magnitude", move.magnitude);
