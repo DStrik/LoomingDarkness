@@ -56,7 +56,9 @@ public class Inventory : MonoBehaviour {
 						break;
 					}
 				}
-				inventorySlots[i].image.overrideSprite = null;
+				if(inventorySlots[i].image.sprite != null) {	
+					inventorySlots[i].image.overrideSprite = null;
+				}
 			}
 		}
 	}
