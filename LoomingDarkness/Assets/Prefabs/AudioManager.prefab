@@ -76,3 +76,15 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: Eat
+    clip: {fileID: 8300000, guid: 7fb60bef53836ec458d32cd73bebbeb6, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ItemPickup
+    clip: {fileID: 8300000, guid: e21861b350c509442815bdb6c267ce02, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
