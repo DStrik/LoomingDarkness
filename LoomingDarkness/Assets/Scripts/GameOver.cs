@@ -15,11 +15,13 @@ public class GameOver : MonoBehaviour {
 	}
 
 	public void Restart() {
+		Time.timeScale = 1;
 		SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
 	}
 	public void EndGame() {
 		Debug.Log("GameOver!");
-		Character.SetActive(false);
+		// Character.SetActive(false);
+		Time.timeScale = 0;
 		GameOverUI.SetActive(true);
 	}
 }

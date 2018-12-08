@@ -7,9 +7,12 @@ public class Torch : MonoBehaviour {
 	public float durability = 100;
 	public bool inUse = false;
 	public float reduction = 1;
-	public float secDelay = 0;
+	public float secDelay;
 	public float delayPeriod = 1;
 
+	void Start() {
+		secDelay = Time.time;
+	}
 	// Update is called once per frame
 	void Update () {
 		if(inUse) {

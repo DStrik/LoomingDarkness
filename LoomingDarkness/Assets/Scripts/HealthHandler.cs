@@ -7,14 +7,17 @@ public class HealthHandler : MonoBehaviour {
 	public GameObject healthBar;
 	private HealthSystem healthSystem;
 	public bool inSafeRoom = true;
-	private float secDelay = 0;
+	private float secDelay;
 	public float delayPeriod = 1;
 	private float damage = 1;
+	private bool death;
 
 	// Use this for initialization
 	void Start () {
 		healthSystem = new HealthSystem(100);
 		healthBar.GetComponent<HealthBar>().Setup(healthSystem);
+		death = false;
+		secDelay = Time.time;
 	}
 
 	void Update() {
@@ -39,7 +42,8 @@ public class HealthHandler : MonoBehaviour {
 			}
 		}
 
-		if(healthSystem.getHealth() <= 0) {
+		if(healthSystem.getHealth() <= 0 && !death) {
+			death = true;
 			FindObjectOfType<GameOver>().EndGame();
 		}
 	}
