@@ -26,7 +26,7 @@ public class LightHandler : MonoBehaviour {
 			charLight.transform.localScale = new Vector3(lightSystem.getLight() * lightRatio,lightSystem.getLight() * lightRatio,1);	
 		}
 		if(torch != null){
-			if(torch.GetComponentInParent<Torch>().durability <= 0) {
+			if(torch.GetComponentInParent<Torch>().durability <= 10) {
 				usingTorch = false;
 				animator.SetBool("Torch", usingTorch);
 				inventory.RemoveItem(torch);
