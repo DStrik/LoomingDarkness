@@ -10,8 +10,11 @@ public class GameOver : MonoBehaviour {
 	private GameObject GameOverUI;
 
 	public void Quit() {
-		Debug.Log("Application terminated");
-		Application.Quit();
+		#if UNITY_EDITOR
+			UnityEditor.EditorApplication.isPlaying = false;
+		#else
+			Application.Quit();
+		#endif
 	}
 
 	public void Restart() {
