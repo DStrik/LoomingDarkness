@@ -2,12 +2,9 @@
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameOver : MonoBehaviour {
+public class GameUI : MonoBehaviour {
 
-	public GameObject Character;
-
-	[SerializeField]
-	private GameObject GameOverUI;
+	public GameObject GameOverUI, pauseMenu;
 
 	public void Quit() {
 		#if UNITY_EDITOR
@@ -17,13 +14,19 @@ public class GameOver : MonoBehaviour {
 		#endif
 	}
 
+	void Update() {
+		if(Input.GetKeyDown(KeyCode.Escape)) {
+			Time.timeScale = 0;
+			pauseMenu.SetActive(true);
+		}
+	}
+
 	public void Restart() {
 		Time.timeScale = 1;
 		SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
 	}
 	public void EndGame() {
 		Debug.Log("GameOver!");
-		// Character.SetActive(false);
 		Time.timeScale = 0;
 		GameOverUI.SetActive(true);
 	}

@@ -44,7 +44,7 @@ public class HealthHandler : MonoBehaviour {
 
 		if(healthSystem.getHealth() <= 0 && !death) {
 			death = true;
-			FindObjectOfType<GameOver>().EndGame();
+			FindObjectOfType<GameUI>().EndGame();
 		}
 	}
 
