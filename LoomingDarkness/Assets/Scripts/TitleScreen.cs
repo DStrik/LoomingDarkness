@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class TitleScreen : MonoBehaviour {
 
 	public EventSystem eventSystem;
 	public GameObject selectedObject;
 	private bool buttonSelected = false;
-
+	
 	public void LoadByIndex (int index) {
 		SceneManager.LoadScene(index);
 	}
@@ -31,5 +32,9 @@ public class TitleScreen : MonoBehaviour {
 		#else
 			Application.Quit();
 		#endif
+	}
+
+	public void SetVolume(Slider slider) {
+		AudioListener.volume = slider.value;
 	}
 }
