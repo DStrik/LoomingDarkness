@@ -88,3 +88,15 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Walk
+    clip: {fileID: 8300000, guid: 494d02f26855b6c45b3112f7aba2bc9d, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Run
+    clip: {fileID: 8300000, guid: aca0f7542d2e752479087714bd37a8c9, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
