@@ -10,6 +10,7 @@ public class InteractableObject : MonoBehaviour {
 	public GameObject unlocker; // item needed to unlock object
 	public string type;
 	public Sprite image;
+	public Sprite altImage;
 
 	public void setInactive() {
 		gameObject.SetActive(false);
