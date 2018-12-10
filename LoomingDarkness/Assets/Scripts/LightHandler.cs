@@ -41,6 +41,7 @@ public class LightHandler : MonoBehaviour {
 		torch.GetComponentInParent<Torch>().inUse = true;
 		this.torch = torch;
 		usingTorch = true;
+		inventory.showTorchActive(torch);
 		animator.SetBool("Torch", usingTorch);
 	}
 
@@ -48,6 +49,7 @@ public class LightHandler : MonoBehaviour {
 		if(torch != null) {
 			torch.GetComponentInParent<Torch>().inUse = false;
 		}
+			inventory.showTorchInactive(torch);
 		this.torch = null;
 		usingTorch = false;
 		animator.SetBool("Torch", usingTorch);

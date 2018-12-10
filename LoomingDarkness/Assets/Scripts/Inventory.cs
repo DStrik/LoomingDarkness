@@ -55,6 +55,15 @@ public class Inventory : MonoBehaviour {
 		}
 		return false;
 	}
+	
+	private int FindItemIndex(GameObject item) {
+		for(int i = 0; i < inventory.Length; i++) {
+			if(inventory[i] == item) {
+				return i;
+			}
+		}
+		return 100;
+	}
 
 	void rearrangeArray() {
 		for(int i = 0; i < inventory.Length; i++) {
@@ -72,11 +81,25 @@ public class Inventory : MonoBehaviour {
 		}
 	}
 
-	public void showActive(int slotNumber) {
-
+	public void showTorchActive(GameObject torch) {
+		int i = FindItemIndex(torch);
+		if(i == 100) {
+			Debug.Log("Torch doesn't exist");
+		}
+		else {	
+			Debug.Log("active torch, i:" + i);
+			inventorySlots[i].image.overrideSprite = torch.GetComponent<InteractableObject>().altImage;
+		}
 	}
 
-	public void showInactive(int slotNumber) {
-		
+	public void showTorchInactive(GameObject torch) {
+		int i = FindItemIndex(torch);
+		if(i == 100) {
+			Debug.Log("Torch doesn't exist");
+		}
+		else {
+			Debug.Log("inactive torch, i:" + i);
+			inventorySlots[i].image.overrideSprite = torch.GetComponent<InteractableObject>().image;
+		}
 	}
 }
