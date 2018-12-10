@@ -53,6 +53,8 @@ public class LightHandler : MonoBehaviour {
 		this.torch = null;
 		usingTorch = false;
 		animator.SetBool("Torch", usingTorch);
+		FindObjectOfType<AudioManager>().Stop("SmallBurn");
+		FindObjectOfType<AudioManager>().Play("ExtinguishTorch");
 		charLight.transform.localScale = new Vector3(0,0,1);
 	}
 
