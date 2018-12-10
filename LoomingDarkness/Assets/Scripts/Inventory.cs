@@ -8,7 +8,6 @@ public class Inventory : MonoBehaviour {
 
 	public GameObject[] inventory = new GameObject[4];
 	public Button[] inventorySlots = new Button[4];
-	public event EventHandler OnInventoryChange;
 	public bool AddItem(GameObject item) {
 		for(int i = 0; i < inventory.Length; i++) {
 			if(inventory[i] == null) {
@@ -58,7 +57,6 @@ public class Inventory : MonoBehaviour {
 	}
 
 	void rearrangeArray() {
-
 		for(int i = 0; i < inventory.Length; i++) {
 			if(inventory[i] == null) {
 				for(int k = i + 1; k < inventory.Length; k++) {
@@ -72,5 +70,13 @@ public class Inventory : MonoBehaviour {
 				}
 			}
 		}
+	}
+
+	public void showActive(int slotNumber) {
+
+	}
+
+	public void showInactive(int slotNumber) {
+		
 	}
 }
