@@ -10,6 +10,14 @@ public class TitleScreen : MonoBehaviour {
 	public EventSystem eventSystem;
 	public GameObject selectedObject;
 	private bool buttonSelected = false;
+
+	void Awake() {
+		GameObject aud = GameObject.Find("AudioManager");
+
+		if(aud != null) {
+			Destroy(aud);
+		}
+	}
 	
 	public void LoadByIndex (int index) {
 		SceneManager.LoadScene(index);
