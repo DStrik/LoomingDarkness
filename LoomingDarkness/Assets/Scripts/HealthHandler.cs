@@ -56,8 +56,20 @@ public class HealthHandler : MonoBehaviour {
 		}
 	}
 
+	private IEnumerator hurtRoutine(int hurtAmount) {
+		for(int i = 1; i < hurtAmount; i++) {
+			healthSystem.hurt(2);
+
+			yield return new WaitForSeconds(0.01f);
+		}
+	}
+
 	public void heal(int healAmount) {
 		StartCoroutine(healRoutine(healAmount));
+	}
+
+	public void hurt(int hurtAmount) {
+		StartCoroutine(hurtRoutine(hurtAmount));
 	}
 
 	void OnTriggerExit2D(Collider2D other) {

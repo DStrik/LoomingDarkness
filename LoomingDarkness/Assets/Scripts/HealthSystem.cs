@@ -41,4 +41,16 @@ public class HealthSystem {
 			OnHealthChange(this, EventArgs.Empty);
 		}
 	}
+
+	public void hurt(float hurtAmount) {
+		health -= hurtAmount;
+
+		if(health < 0) {
+			health = 0;
+		}
+
+		if(OnHealthChange != null) {
+			OnHealthChange(this, EventArgs.Empty);
+		}
+	}
 }
