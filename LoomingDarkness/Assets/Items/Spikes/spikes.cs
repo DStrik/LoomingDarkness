@@ -19,5 +19,10 @@ public class spikes : MonoBehaviour {
 		}
 
 		animator.SetBool("Up", up);
+		
+		BoxCollider2D[] colliders = GetComponents<BoxCollider2D>();
+		foreach(BoxCollider2D c in colliders) {
+			c.enabled = !c.enabled;
+		}
 	}
 }

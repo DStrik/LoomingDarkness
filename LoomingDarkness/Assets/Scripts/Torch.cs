@@ -38,4 +38,12 @@ public class Torch : MonoBehaviour {
 			}
 		}
 	}
+
+	public float GetDurability() {
+		return durability;
+	}
+
+	public void SetDurability(float durability) {
+		this.durability = durability;
+	}
 }
