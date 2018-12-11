@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -70,6 +70,14 @@ public class HealthHandler : MonoBehaviour {
 		if(other.CompareTag("SafeZone")){
 			inSafeRoom = true;
 		}
+	}
+
+	public float GetHealth() {
+		return healthSystem.getHealth();
+	}
+
+	public void SetHealth(float health) {
+		healthSystem.SetHealth(health);
 	}
 	
 }
