@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 public class HealthSystem {
 
 	public event EventHandler OnHealthChange;

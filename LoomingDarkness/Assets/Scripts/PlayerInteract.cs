@@ -9,6 +9,8 @@ public class PlayerInteract : MonoBehaviour {
 	public HealthHandler healthHandler;
 	public LightHandler lightHandler;
 	public GameObject currTorchInUse = null;
+	public GameObject currDamager = null;
+	public Damager currDamagerObjScript = null;
 	
 
 	void Update() {
@@ -39,6 +41,9 @@ public class PlayerInteract : MonoBehaviour {
 				else {
 					currInterObjScript.setInactive();
 				}
+			}
+			else if(currInterObjScript.type == "Switch") {
+				currInterObj.GetComponent<switcher>().UseSwitch();
 			}
 		}
 
@@ -124,6 +129,12 @@ public class PlayerInteract : MonoBehaviour {
 			currInterObj = other.gameObject;
 			currInterObjScript = currInterObj.GetComponent<InteractableObject>();
 		}
+		else if(other.CompareTag("Damager")) {
+			Debug.Log(other.name + " damager collision");
+			currDamager = other.gameObject;
+			currDamagerObjScript = currDamager.GetComponent<Damager>();
+			healthHandler.hurt(currDamagerObjScript.damage);
+		}
 	}
 
 	void OnTriggerExit2D(Collider2D other) {
@@ -131,6 +142,12 @@ public class PlayerInteract : MonoBehaviour {
 			if(other.gameObject == currInterObj) {
 				currInterObj = null;
 				currInterObjScript = null;
+			}
+		}
+		else if(other.CompareTag("Damager")) {
+			if(other.gameObject == currDamager) {
+				currDamager = null;
+				currDamagerObjScript = null;
 			}
 		}
 	}
