@@ -8,7 +8,10 @@ public class Torch : MonoBehaviour {
 	public bool inUse = false;
 	public float reduction = 1;
 	public float secDelay;
-	public float delayPeriod = 1;
+	public float delayPeriod = 0.1f;
+	public float lightMeter = 50;
+	public float lightsecDelay;
+	public float lightDelayPeriod = 0.05f;
 
 	void Start() {
 		secDelay = Time.time;
@@ -21,10 +24,17 @@ public class Torch : MonoBehaviour {
 					secDelay += delayPeriod;
 					durability -= reduction;
 				}
+				if(Time.time > lightsecDelay) {
+					if(durability < 25) {
+						lightMeter -= reduction;
+					}
+					lightsecDelay += lightDelayPeriod;
+				}
 			}
 		}else {
 			if(Time.time > secDelay) {
 				secDelay += delayPeriod;
+				lightsecDelay += lightDelayPeriod;
 			}
 		}
 	}

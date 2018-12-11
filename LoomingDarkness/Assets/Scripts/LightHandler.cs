@@ -5,10 +5,11 @@ using UnityEngine;
 public class LightHandler : MonoBehaviour {
 
 	private LightSystem lightSystem;
+	public GameObject lightBar;
 	public GameObject charLight;
 	public GameObject torch;
 	public Animator animator;
-	public float lightRatio = 0.1f;
+	public float lightRatio = 0.2f;
 	public float torchDepletion = 1;
 	public bool usingTorch = false;
 	public Inventory inventory;
@@ -17,16 +18,20 @@ public class LightHandler : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		lightSystem = new LightSystem(0);
+		lightBar.GetComponent<LightBar>().updateBar(0f);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(usingTorch) {	
-			lightSystem.updateLight(torch.GetComponentInParent<Torch>().durability);
+			lightSystem.updateLight(torch.GetComponentInParent<Torch>().lightMeter);
 			charLight.transform.localScale = new Vector3(lightSystem.getLight() * lightRatio,lightSystem.getLight() * lightRatio,1);	
+			lightBar.GetComponent<LightBar>().updateBar(torch.GetComponentInParent<Torch>().durability);
+		}else {
+			lightBar.GetComponent<LightBar>().updateBar(0f);
 		}
 		if(torch != null){
-			if(torch.GetComponentInParent<Torch>().durability <= 10) {
+			if(torch.GetComponentInParent<Torch>().durability <= 1) {
 				usingTorch = false;
 				animator.SetBool("Torch", usingTorch);
 				inventory.RemoveItem(torch);
