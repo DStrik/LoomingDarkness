@@ -48,8 +48,9 @@ public class LightHandler : MonoBehaviour {
 	public void turnOffTorch() {
 		if(torch != null) {
 			torch.GetComponentInParent<Torch>().inUse = false;
-		}
 			inventory.showTorchInactive(torch);
+		}
+			
 		this.torch = null;
 		usingTorch = false;
 		animator.SetBool("Torch", usingTorch);
