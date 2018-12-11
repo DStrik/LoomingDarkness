@@ -13,6 +13,7 @@ public class Enemy_AI : MonoBehaviour {
 	public LayerMask myLayerMask;
 	private RaycastHit2D hit;
 	public Animator animator;
+	private Vector3 move;
 
 
 		
@@ -27,30 +28,36 @@ public class Enemy_AI : MonoBehaviour {
 
 	void attack() {
 		hit = Physics2D.Raycast(transform.position, playerDirection, range, myLayerMask);
-		if(hit.transform.tag == "Character"){
-			Vector3 move = new Vector3(xDif, yDif, 0.0f);
-			
+		
+		if(hit) {
+			if(hit.transform.tag == "Character"){
+				move = new Vector3(xDif, yDif, 0.0f);
+
+				transform.position = transform.position + move.normalized * Time.deltaTime * speed;			
+			}else {
+				move = new Vector3(0f,0f,0f);
+			}
+			if(hit.transform.tag == "SafeZone") {
+				Destroy(gameObject);
+			}
+
 			animator.SetFloat("Horizontal", move.x);
-			animator.SetFloat("Vertical", move.y);
-			animator.SetFloat("Magnitude", move.magnitude);
+				animator.SetFloat("Vertical", move.y);
+				animator.SetFloat("Magnitude", move.magnitude);
 
-			if(move.x < 0) {
-				animator.SetInteger("Direction", 0);
-			}
-			else if(move.x > 0) {
-				animator.SetInteger("Direction", 1);
-			}
-			else if(move.y < 0) {
-				animator.SetInteger("Direction", 2);
-			}
-			else if(move.y > 0) {
-				animator.SetInteger("Direction", 3);
-			}
+				if(move.x < 0) {
+					animator.SetInteger("Direction", 0);
+				}
+				else if(move.x > 0) {
+					animator.SetInteger("Direction", 1);
+				}
+				else if(move.y < 0) {
+					animator.SetInteger("Direction", 2);
+				}
+				else if(move.y > 0) {
+					animator.SetInteger("Direction", 3);
+				}
 
-			transform.position = transform.position + move.normalized * Time.deltaTime * speed;			
-		}
-		if(hit.transform.tag == "SafeZone") {
-			Destroy(gameObject);
 		}
 	}
 }
