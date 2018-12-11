@@ -60,7 +60,7 @@ public class LightHandler : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if(other.CompareTag("SafeZone")){
+		if(other.CompareTag("SafeZone") && usingTorch){
 			turnOffTorch();
 		}
 	}
