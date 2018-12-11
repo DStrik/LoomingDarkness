@@ -8,6 +8,7 @@ public class PlayerInteract : MonoBehaviour {
 	public Inventory inventory;
 	public HealthHandler healthHandler;
 	public LightHandler lightHandler;
+	public GameObject currTorchInUse = null;
 	
 
 	void Update() {
@@ -66,6 +67,52 @@ public class PlayerInteract : MonoBehaviour {
 				Debug.Log("Pressing Eat food, food item: " + food.name);
 				healthHandler.heal(50); // change value to food heal value in future
 				inventory.RemoveItem(food);
+				FindObjectOfType<AudioManager>().Play("Eat");
+			}
+		}
+		else if(Input.GetButtonDown("Slot 0")) {
+			useInventoryItem(0);
+		}
+		else if(Input.GetButtonDown("Slot 1")) {
+			useInventoryItem(1);
+		}
+		else if(Input.GetButtonDown("Slot 2")) {
+			useInventoryItem(2);
+		}
+		else if(Input.GetButtonDown("Slot 3")) {
+			useInventoryItem(3);
+		}
+	}
+
+	void useInventoryItem(int invNum) {
+		GameObject item = inventory.inventory[invNum];
+		if(item != null) {
+			if(item.GetComponent<InteractableObject>().type == "Torch") {
+				if(currTorchInUse == null) {
+					currTorchInUse = item;
+					lightHandler.turnOnTorch(currTorchInUse);
+					FindObjectOfType<AudioManager>().Play("TorchOn");
+					FindObjectOfType<AudioManager>().Play("SmallBurn");
+				}
+				else if(currTorchInUse != null) {
+					Debug.Log("turn off torch");
+					lightHandler.turnOffTorch();
+					FindObjectOfType<AudioManager>().Stop("SmallBurn");
+					FindObjectOfType<AudioManager>().Play("ExtinguishTorch");
+					if(currTorchInUse == item) {
+						currTorchInUse = null;
+					}
+					else {
+						currTorchInUse = item;
+						lightHandler.turnOnTorch(currTorchInUse);
+						FindObjectOfType<AudioManager>().Play("TorchOn");
+						FindObjectOfType<AudioManager>().Play("SmallBurn");
+					}
+				}
+			}
+			else if(item.GetComponent<InteractableObject>().type == "Food") {
+				healthHandler.heal(50); // change value to food heal value in future
+				inventory.RemoveItem(item);
 				FindObjectOfType<AudioManager>().Play("Eat");
 			}
 		}

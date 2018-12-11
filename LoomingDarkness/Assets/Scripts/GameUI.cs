@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameUI : MonoBehaviour {
 
 	public GameObject GameOverUI, pauseMenu;
+	private bool PauseMenuOn = false;
 
 	public void Quit() {
 		#if UNITY_EDITOR
@@ -15,9 +16,15 @@ public class GameUI : MonoBehaviour {
 	}
 
 	void Update() {
-		if(Input.GetKeyDown(KeyCode.Escape)) {
+		if(Input.GetKeyDown(KeyCode.Escape) && !PauseMenuOn) {
 			Time.timeScale = 0;
 			pauseMenu.SetActive(true);
+			PauseMenuOn = true;
+		}
+		else if(Input.GetKeyDown(KeyCode.Escape) && PauseMenuOn) {
+			Time.timeScale = 1;
+			pauseMenu.SetActive(false);
+			PauseMenuOn = false;
 		}
 	}
 

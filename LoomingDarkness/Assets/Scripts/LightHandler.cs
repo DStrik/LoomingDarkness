@@ -41,21 +41,26 @@ public class LightHandler : MonoBehaviour {
 		torch.GetComponentInParent<Torch>().inUse = true;
 		this.torch = torch;
 		usingTorch = true;
+		inventory.showTorchActive(torch);
 		animator.SetBool("Torch", usingTorch);
 	}
 
 	public void turnOffTorch() {
 		if(torch != null) {
 			torch.GetComponentInParent<Torch>().inUse = false;
+			inventory.showTorchInactive(torch);
 		}
+			
 		this.torch = null;
 		usingTorch = false;
 		animator.SetBool("Torch", usingTorch);
+		FindObjectOfType<AudioManager>().Stop("SmallBurn");
+		FindObjectOfType<AudioManager>().Play("ExtinguishTorch");
 		charLight.transform.localScale = new Vector3(0,0,1);
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if(other.CompareTag("SafeZone")){
+		if(other.CompareTag("SafeZone") && usingTorch){
 			turnOffTorch();
 		}
 	}
