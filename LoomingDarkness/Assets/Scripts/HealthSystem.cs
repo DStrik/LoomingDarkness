@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 public class HealthSystem {
 
 	public event EventHandler OnHealthChange;
@@ -40,5 +40,9 @@ public class HealthSystem {
 		if (OnHealthChange != null) {
 			OnHealthChange(this, EventArgs.Empty);
 		}
+	}
+
+	public void SetHealth(float health) {
+		this.health = health;
 	}
 }
