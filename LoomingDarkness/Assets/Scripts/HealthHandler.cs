@@ -71,5 +71,13 @@ public class HealthHandler : MonoBehaviour {
 			inSafeRoom = true;
 		}
 	}
+
+	public float GetHealth() {
+		return healthSystem.getHealth();
+	}
+
+	public void SetHealth(float health) {
+		healthSystem.SetHealth(health);
+	}
 	
 }

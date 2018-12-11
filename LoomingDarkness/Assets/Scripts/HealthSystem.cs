@@ -41,4 +41,8 @@ public class HealthSystem {
 			OnHealthChange(this, EventArgs.Empty);
 		}
 	}
+
+	public void SetHealth(float health) {
+		this.health = health;
+	}
 }
