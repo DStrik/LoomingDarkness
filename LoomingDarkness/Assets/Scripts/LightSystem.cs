@@ -16,6 +16,10 @@ public class LightSystem {
 		return light;
 	}
 
+	public float getLightPercentage() {
+		return light*2;		
+	}
+
 	public void updateLight(float status) {
 		
 		this.light = status;
