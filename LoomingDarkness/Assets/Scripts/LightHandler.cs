@@ -8,7 +8,7 @@ public class LightHandler : MonoBehaviour {
 	public GameObject charLight;
 	public GameObject torch;
 	public Animator animator;
-	public float lightRatio = 0.1f;
+	public float lightRatio = 0.2f;
 	public float torchDepletion = 1;
 	public bool usingTorch = false;
 	public Inventory inventory;
@@ -22,11 +22,11 @@ public class LightHandler : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(usingTorch) {	
-			lightSystem.updateLight(torch.GetComponentInParent<Torch>().durability);
+			lightSystem.updateLight(torch.GetComponentInParent<Torch>().lightMeter);
 			charLight.transform.localScale = new Vector3(lightSystem.getLight() * lightRatio,lightSystem.getLight() * lightRatio,1);	
 		}
 		if(torch != null){
-			if(torch.GetComponentInParent<Torch>().durability <= 10) {
+			if(torch.GetComponentInParent<Torch>().durability <= 1) {
 				usingTorch = false;
 				animator.SetBool("Torch", usingTorch);
 				inventory.RemoveItem(torch);
