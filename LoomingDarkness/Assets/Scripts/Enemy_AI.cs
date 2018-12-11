@@ -14,6 +14,7 @@ public class Enemy_AI : MonoBehaviour {
 	private RaycastHit2D hit;
 	public Animator animator;
 	private Vector3 move;
+	private bool stop = false;
 
 
 		
@@ -31,9 +32,10 @@ public class Enemy_AI : MonoBehaviour {
 		
 		if(hit) {
 			if(hit.transform.tag == "Character"){
-				move = new Vector3(xDif, yDif, 0.0f);
-
-				transform.position = transform.position + move.normalized * Time.deltaTime * speed;			
+				if(!stop) {
+					move = new Vector3(xDif, yDif, 0.0f);
+					transform.position = transform.position + move.normalized * Time.deltaTime * speed;			
+				}
 			}else {
 				move = new Vector3(0f,0f,0f);
 			}
@@ -41,23 +43,38 @@ public class Enemy_AI : MonoBehaviour {
 				Destroy(gameObject);
 			}
 
-			animator.SetFloat("Horizontal", move.x);
-				animator.SetFloat("Vertical", move.y);
-				animator.SetFloat("Magnitude", move.magnitude);
-
-				if(move.x < 0) {
-					animator.SetInteger("Direction", 0);
-				}
-				else if(move.x > 0) {
-					animator.SetInteger("Direction", 1);
-				}
-				else if(move.y < 0) {
-					animator.SetInteger("Direction", 2);
-				}
-				else if(move.y > 0) {
-					animator.SetInteger("Direction", 3);
-				}
 
 		}
+		animator.SetFloat("Horizontal", move.x);
+		animator.SetFloat("Vertical", move.y);
+		animator.SetFloat("Magnitude", move.magnitude);
+
+		if(move.x < 0) {
+			animator.SetInteger("Direction", 0);
+		}
+		else if(move.x > 0) {
+			animator.SetInteger("Direction", 1);
+		}
+		else if(move.y < 0) {
+			animator.SetInteger("Direction", 2);
+		}
+		else if(move.y > 0) {
+			animator.SetInteger("Direction", 3);
+		}
 	}
+
+	void OnTriggerEnter2D(Collider2D other) {
+		Debug.Log("almost");
+		if(other.CompareTag("Character")) {
+			stop = true;
+			move = new Vector3(0f,0f,0f);
+			Invoke("resetStop", 3);
+			Debug.Log("stop");
+		}
+	}
+
+	public void resetStop() {
+		stop = false;
+	}
+	
 }
