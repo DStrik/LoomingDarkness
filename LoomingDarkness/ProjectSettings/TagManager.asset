@@ -8,7 +8,7 @@ TagManager:
   - SafeZone
   - Character
   - Pause
-  - Paingiver
+  - Damager
   layers:
   - Default
   - TransparentFX

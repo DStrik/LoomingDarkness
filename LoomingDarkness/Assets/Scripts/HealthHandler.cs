@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +6,7 @@ public class HealthHandler : MonoBehaviour {
 
 	public GameObject healthBar;
 	private HealthSystem healthSystem;
-	public bool inSafeRoom = true;
+	public bool inSafeRoom = false;
 	private float secDelay;
 	public float delayPeriod = 1;
 	private float damage = 1;
@@ -49,7 +49,7 @@ public class HealthHandler : MonoBehaviour {
 	}
 
 	private IEnumerator healRoutine(int healAmount) {
-		for(int i = 1; i < healAmount; i++) {
+		for(int i = 1; i < healAmount; i = i + 2) {
 			healthSystem.heal(2);
 
 			yield return new WaitForSeconds(0.01f);
@@ -57,8 +57,9 @@ public class HealthHandler : MonoBehaviour {
 	}
 
 	private IEnumerator hurtRoutine(int hurtAmount) {
-		for(int i = 1; i < hurtAmount; i++) {
-			healthSystem.hurt(2);
+		Debug.Log("hurtroutine:" + hurtAmount);
+		for(int i = 1; i < hurtAmount; i = i + 2) {
+			healthSystem.damage(2);
 
 			yield return new WaitForSeconds(0.01f);
 		}
@@ -69,6 +70,7 @@ public class HealthHandler : MonoBehaviour {
 	}
 
 	public void hurt(int hurtAmount) {
+		Debug.Log("hurt:" + hurtAmount);
 		StartCoroutine(hurtRoutine(hurtAmount));
 	}
 
@@ -82,6 +84,14 @@ public class HealthHandler : MonoBehaviour {
 		if(other.CompareTag("SafeZone")){
 			inSafeRoom = true;
 		}
+	}
+
+	public float GetHealth() {
+		return healthSystem.getHealth();
+	}
+
+	public void SetHealth(float health) {
+		healthSystem.SetHealth(health);
 	}
 	
 }
