@@ -20,6 +20,7 @@ public class TitleScreen : MonoBehaviour {
 	}
 	
 	public void LoadByIndex (int index) {
+		Time.timeScale = 1;
 		SceneManager.LoadScene(index);
 	}
 
@@ -44,5 +45,10 @@ public class TitleScreen : MonoBehaviour {
 
 	public void SetVolume(Slider slider) {
 		AudioListener.volume = slider.value;
+	}
+
+	public void LoadGame() {
+		PlayerData data = SaveSystem.LoadPlayer();
+		LoadByIndex(data.scene);
 	}
 }
