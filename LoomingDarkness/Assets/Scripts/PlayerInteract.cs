@@ -11,6 +11,7 @@ public class PlayerInteract : MonoBehaviour {
 	public GameObject currTorchInUse = null;
 	public GameObject currDamager = null;
 	public Damager currDamagerObjScript = null;
+	private bool stillDamage = false;
 	
 
 	void Update() {
@@ -131,9 +132,11 @@ public class PlayerInteract : MonoBehaviour {
 		}
 		else if(other.CompareTag("Damager")) {
 			Debug.Log(other.name + " damager collision");
+			stillDamage = true;
 			currDamager = other.gameObject;
 			currDamagerObjScript = currDamager.GetComponent<Damager>();
 			healthHandler.hurt(currDamagerObjScript.damage);
+			Invoke("stillDamaging", 2);
 		}
 	}
 
@@ -146,9 +149,18 @@ public class PlayerInteract : MonoBehaviour {
 		}
 		else if(other.CompareTag("Damager")) {
 			if(other.gameObject == currDamager) {
+				stillDamage = false;
 				currDamager = null;
 				currDamagerObjScript = null;
 			}
+		}
+	}
+
+	public void stillDamaging() {
+		if(stillDamage) {
+			currDamagerObjScript = currDamager.GetComponent<Damager>();
+			healthHandler.hurt(currDamagerObjScript.damage);
+			Invoke("stillDamaging", 2);
 		}
 	}
 }

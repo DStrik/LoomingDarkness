@@ -64,12 +64,12 @@ public class Enemy_AI : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		Debug.Log("almost");
+		//Debug.Log("almost");
 		if(other.CompareTag("Character")) {
 			stop = true;
 			move = new Vector3(0f,0f,0f);
 			Invoke("resetStop", 3);
-			Debug.Log("stop");
+			//Debug.Log("stop");
 		}
 	}
 

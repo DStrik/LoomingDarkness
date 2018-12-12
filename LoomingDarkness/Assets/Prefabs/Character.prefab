@@ -162,9 +162,10 @@ GameObject:
   - component: {fileID: 114371100907805752}
   - component: {fileID: 114064605744769176}
   - component: {fileID: 81954978701735236}
+  - component: {fileID: 114541767302027344}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -473,7 +474,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1370116506155906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.79, y: -0.33, z: -0.100977905}
+  m_LocalPosition: {x: -5.63, y: -0.08, z: -0.100977905}
   m_LocalScale: {x: 3.824, y: 4, z: 1}
   m_Children:
   - {fileID: 4308031356373826}
@@ -549,7 +550,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -570,7 +571,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.000000014901161, y: 0.033671774}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -581,7 +582,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.24}
+  m_Size: {x: 0.1430215, y: 0.17584631}
   m_EdgeRadius: 0
 --- !u!81 &81954978701735236
 AudioListener:
@@ -1019,6 +1020,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 259e522b5f7ec4647b3bc427f6f89c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114541767302027344
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1370116506155906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -594688902, guid: f7b54ff4a43d4fcf81b4538b678e0bcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SurfaceParent: {fileID: 0}
+  m_FreezeUpdates: 0
+  m_VolumeType: 1
+  m_SphereRadius: 2
+  m_HalfBoxExtents: {x: 4, y: 4, z: 4}
+  m_LodType: 1
+  m_NumUpdatesBeforeRemoval: 10
+  m_SecondsBetweenUpdates: 2.5
+  m_CurrentRenderState: 1
+  m_VisualMaterial: {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
+  m_OcclusionMaterial: {fileID: 15302, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!114 &114554727791860408
 MonoBehaviour:
   m_ObjectHideFlags: 1
