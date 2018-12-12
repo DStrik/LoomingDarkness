@@ -1,17 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerLoad : MonoBehaviour {
 
 	private GameObject character;
 
-	void Start () {
+	void Start() {
 		GameObject load = GameObject.Find("LoadGame");
 
 		if(load != null){
 			if(load.GetComponent<StartingSceneLoad>().load == true) {
-				loadPlayer();
+				Invoke("loadPlayer", 0.05f);
+				load.GetComponent<StartingSceneLoad>().SetLoadFalse();
 			}
 		}
 		
@@ -73,6 +75,6 @@ public class PlayerLoad : MonoBehaviour {
 		position.y = data.position[1];
 		position.z = data.position[2];
 		Debug.Log("Changing position");
-		//transform.position = position;
+		character.transform.position = position;
 	}
 }

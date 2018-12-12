@@ -48,7 +48,11 @@ public class TitleScreen : MonoBehaviour {
 	}
 
 	public void LoadGame() {
+		GameObject load = GameObject.Find("LoadGame");
+		load.GetComponent<StartingSceneLoad>().SetLoadTrue();
 		PlayerData data = SaveSystem.LoadPlayer();
 		LoadByIndex(data.scene);
+		// Time.timeScale = 1;
+		// SceneManager.LoadScene("Main-DMB");
 	}
 }
