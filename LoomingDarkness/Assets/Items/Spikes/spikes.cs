@@ -6,9 +6,14 @@ public class spikes : MonoBehaviour {
 
 	public bool up = false;
 	public Animator animator;
+	public float timeInterval = 0;
 
 	private void Start() {
 		animator.SetBool("Up", up);
+
+		if(timeInterval != 0) {
+        	InvokeRepeating("onChange", 2.0f, timeInterval);
+		}
 	}
 	public void OnSwitch() {
 		if(up) {
