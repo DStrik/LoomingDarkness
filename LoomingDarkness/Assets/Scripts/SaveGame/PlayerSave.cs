@@ -10,6 +10,7 @@ public class PlayerSave : MonoBehaviour {
 	private string[] Inventory;
 
 	public int scene;
+	public Vector3 position;
 
 	public TorchSave[] torchSave;
 
@@ -17,6 +18,7 @@ public class PlayerSave : MonoBehaviour {
 
 	public void SavePlayer() {
 		character = GameObject.Find("Character");
+		position = new Vector3(character.transform.position.x, character.transform.position.y, character.transform.position.z);
 		Debug.Log("Inside SavePlayer function");
 		scene = SceneManager.sceneCountInBuildSettings;
 		health = character.GetComponent<HealthHandler>().GetHealth();

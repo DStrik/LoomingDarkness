@@ -92,6 +92,8 @@ public class HealthHandler : MonoBehaviour {
 
 	public void SetHealth(float health) {
 		healthSystem.SetHealth(health);
+		healthSystem.damage(1);
+		healthSystem.heal(1);
 	}
 	
 }

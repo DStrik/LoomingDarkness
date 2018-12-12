@@ -26,8 +26,8 @@ public class PlayerData {
 		scene = player.scene;
 
 		position = new float[3];
-		position[0] = player.transform.position.x;
-		position[1] = player.transform.position.y;
-		position[2] = player.transform.position.z;
+		position[0] = player.position.x;
+		position[1] = player.position.y;
+		position[2] = player.position.z;
 	} 
 }

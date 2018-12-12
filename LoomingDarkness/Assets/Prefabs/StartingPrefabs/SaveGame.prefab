@@ -78,4 +78,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: 0
+  position: {x: 0, y: 0, z: 0}
   torchSave: []
