@@ -48,7 +48,7 @@ public class TitleScreen : MonoBehaviour {
 	}
 
 	public void LoadGame() {
-		GameObject load = GameObject.Find("LoadGame");
+		GameObject load = GameObject.Find("CheckLoadGame");
 		load.GetComponent<StartingSceneLoad>().SetLoadTrue();
 		PlayerData data = SaveSystem.LoadPlayer();
 		LoadByIndex(data.scene);

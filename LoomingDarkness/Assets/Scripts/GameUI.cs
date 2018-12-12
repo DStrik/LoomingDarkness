@@ -29,8 +29,10 @@ public class GameUI : MonoBehaviour {
 	}
 
 	public void Restart() {
+		GameObject load = GameObject.Find("CheckLoadGame");
+		load.GetComponent<StartingSceneLoad>().SetLoadFalse();
 		Time.timeScale = 1;
-		SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
+		SceneManager.LoadScene("Loading");
 	}
 	public void EndGame() {
 		Debug.Log("GameOver!");

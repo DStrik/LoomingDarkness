@@ -20,7 +20,7 @@ public class PlayerSave : MonoBehaviour {
 		character = GameObject.Find("Character");
 		position = new Vector3(character.transform.position.x, character.transform.position.y, character.transform.position.z);
 		Debug.Log("Inside SavePlayer function");
-		scene = SceneManager.sceneCountInBuildSettings;
+		scene = SceneManager.GetActiveScene().buildIndex;
 		health = character.GetComponent<HealthHandler>().GetHealth();
 		Inventory = new string[4];
 		torchSave = new TorchSave[4];

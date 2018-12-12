@@ -34,7 +34,6 @@ public class AudioManager : MonoBehaviour {
 		Play("Theme");
 	}
 	
-	// Update is called once per frame
 	public void Play (string name) {
 		Sound s = Array.Find(sounds, sound => sound.name == name);
 		if(s == null) {

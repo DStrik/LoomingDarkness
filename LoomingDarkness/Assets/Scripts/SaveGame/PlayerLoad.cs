@@ -8,9 +8,13 @@ public class PlayerLoad : MonoBehaviour {
 	private GameObject character;
 
 	void Start() {
-		GameObject load = GameObject.Find("LoadGame");
-
+		GameObject load = GameObject.Find("CheckLoadGame");
+		Debug.Log("In start in playerLoad");
+		if(load == null) {
+			Debug.Log("load is null");
+		}
 		if(load != null){
+			Debug.Log("load is :" + load.GetComponent<StartingSceneLoad>().load);
 			if(load.GetComponent<StartingSceneLoad>().load == true) {
 				Invoke("loadPlayer", 0.05f);
 				load.GetComponent<StartingSceneLoad>().SetLoadFalse();
