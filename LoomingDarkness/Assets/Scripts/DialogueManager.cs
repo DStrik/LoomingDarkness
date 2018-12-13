@@ -8,7 +8,9 @@ public class DialogueManager : MonoBehaviour {
 	public Text text;
 	public Queue<string> sentences;
 	public Animator animator;
+	private string sentence;
 	private bool inProgress = false;
+	private bool sentenceNotCompleted;
 	// Use this for initialization
 	void Start () {
 		sentences = new Queue<string>();
@@ -43,17 +45,24 @@ public class DialogueManager : MonoBehaviour {
 			return;
 		}
 
-		string sentence = sentences.Dequeue();
 		StopAllCoroutines();
-		StartCoroutine(TypeSentence(sentence));
+		if(sentenceNotCompleted) {
+			text.text = this.sentence;
+			sentenceNotCompleted = false;
+		}else {
+			this.sentence = sentences.Dequeue();
+			StartCoroutine(TypeSentence(this.sentence));
+		}
 	}
 
 	IEnumerator TypeSentence(string sentence) {
+		sentenceNotCompleted = true;
 		text.text = "";
 		foreach(char letter in sentence.ToCharArray()) {
 			text.text += letter;
 			yield return null;
 		}
+		sentenceNotCompleted = false;
 	}
 
 	public void EndDialogue() {
