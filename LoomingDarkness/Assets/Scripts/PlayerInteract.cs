@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerInteract : MonoBehaviour {
 	public GameObject currInterObj = null;
@@ -12,16 +13,23 @@ public class PlayerInteract : MonoBehaviour {
 	public GameObject currDamager = null;
 	public Damager currDamagerObjScript = null;
 	private bool stillDamage = false;
-	
+
+	public SetInactive inactive;
 
 	void Update() {
 		if(Input.GetButtonDown("Interact") && currInterObj) {
 			if(currInterObjScript.storeable) {
 				if(inventory.AddItem(currInterObj)) {
+					if(currInterObj.name.Contains("Torch")) {
+						inactive.SetInactiveItem(currInterObj.transform.parent.gameObject.name);
+					}
+					else {
+						inactive.SetInactiveItem(currInterObj.name);
+					}
 					currInterObj.SendMessage("setInactive");
 					currInterObj = null;
 					currInterObjScript = null;
-					FindObjectOfType<AudioManager>().Play("ItemPickup");					
+					FindObjectOfType<AudioManager>().Play("ItemPickup");				
 				}
 			}
 			else if(currInterObjScript.type == "Fountain") {
@@ -34,6 +42,7 @@ public class PlayerInteract : MonoBehaviour {
 						inventory.RemoveItem(currInterObjScript.unlocker);
 						currInterObjScript.setInactive();
 						Debug.Log(currInterObj + " unlocked");
+						inactive.SetInactiveItem(currInterObj.name);	
 					}
 					else {
 						Debug.Log(currInterObj + " not unlocked");
@@ -45,6 +54,8 @@ public class PlayerInteract : MonoBehaviour {
 			}
 			else if(currInterObjScript.type == "Switch") {
 				currInterObj.GetComponent<switcher>().UseSwitch();
+			}else if(currInterObjScript.type == "Dialogue") {
+				currInterObj.GetComponent<InteractableDialogue>().TriggerDialogue();
 			}
 		}
 
@@ -70,7 +81,7 @@ public class PlayerInteract : MonoBehaviour {
 		if(Input.GetButtonDown("Eat food")) {
 			GameObject food = inventory.FindItemByType("Food");
 			if(food != null) {
-				Debug.Log("Pressing Eat food, food item: " + food.name);
+				// Debug.Log("Pressing Eat food, food item: " + food.name);
 				healthHandler.heal(50); // change value to food heal value in future
 				inventory.RemoveItem(food);
 				FindObjectOfType<AudioManager>().Play("Eat");
@@ -101,7 +112,7 @@ public class PlayerInteract : MonoBehaviour {
 					FindObjectOfType<AudioManager>().Play("SmallBurn");
 				}
 				else if(currTorchInUse != null) {
-					Debug.Log("turn off torch");
+					// Debug.Log("turn off torch");
 					lightHandler.turnOffTorch();
 					FindObjectOfType<AudioManager>().Stop("SmallBurn");
 					FindObjectOfType<AudioManager>().Play("ExtinguishTorch");
@@ -126,12 +137,12 @@ public class PlayerInteract : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if(other.CompareTag("interObj")) {
-			Debug.Log(other.name + " interactable collision");
+			// Debug.Log(other.name + " interactable collision");
 			currInterObj = other.gameObject;
 			currInterObjScript = currInterObj.GetComponent<InteractableObject>();
 		}
 		else if(other.CompareTag("Damager")) {
-			Debug.Log(other.name + " damager collision");
+			// Debug.Log(other.name + " damager collision");
 			stillDamage = true;
 			currDamager = other.gameObject;
 			currDamagerObjScript = currDamager.GetComponent<Damager>();
@@ -143,6 +154,9 @@ public class PlayerInteract : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D other) {
 		if(other.CompareTag("interObj")) {
 			if(other.gameObject == currInterObj) {
+				if(currInterObjScript.type == "Dialogue") {
+					FindObjectOfType<DialogueManager>().EndDialogue();
+				}
 				currInterObj = null;
 				currInterObjScript = null;
 			}

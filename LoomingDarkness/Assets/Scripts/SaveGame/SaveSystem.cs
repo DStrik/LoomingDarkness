@@ -17,9 +17,8 @@ public static class SaveSystem {
 	}
 
 	public static PlayerData LoadPlayer() {
-		Debug.Log("Inside SaveSystem.LoadPlayer()");
 		string path = Application.persistentDataPath + "/player.txt";
-		Debug.Log("Got the path");
+
 		if(File.Exists(path)) {
 			BinaryFormatter formatter = new BinaryFormatter();
 			FileStream stream = new FileStream(path, FileMode.Open);
