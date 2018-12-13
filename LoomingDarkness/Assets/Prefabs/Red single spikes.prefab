@@ -20,10 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4770173886857096}
   - component: {fileID: 212915695617246284}
-  - component: {fileID: 95273964131716590}
   - component: {fileID: 61156952972919426}
   - component: {fileID: 114729283572653702}
   - component: {fileID: 114148979482093762}
+  - component: {fileID: 95578579456784202}
   m_Layer: 0
   m_Name: Red single spikes
   m_TagString: Damager
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1132374203140148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.54, y: -1.43, z: 0}
+  m_LocalPosition: {x: 6.5314856, y: -3.1111608, z: 0}
   m_LocalScale: {x: 4.761878, y: 4.761909, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -69,7 +69,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.11}
   m_EdgeRadius: 0
---- !u!95 &95273964131716590
+--- !u!95 &95578579456784202
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -78,7 +78,7 @@ Animator:
   m_GameObject: {fileID: 1132374203140148}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f6fa88168a699a740a53a3a2d11034eb, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2e209a8a3babe6e46a284a14c286fa16, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   up: 0
-  animator: {fileID: 95273964131716590}
+  animator: {fileID: 95578579456784202}
   timeInterval: 2
   startDelay: 2
 --- !u!212 &212915695617246284
