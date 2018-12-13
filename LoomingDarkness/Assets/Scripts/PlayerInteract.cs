@@ -54,6 +54,8 @@ public class PlayerInteract : MonoBehaviour {
 			}
 			else if(currInterObjScript.type == "Switch") {
 				currInterObj.GetComponent<switcher>().UseSwitch();
+			}else if(currInterObjScript.type == "Dialogue") {
+				currInterObj.GetComponent<InteractableDialogue>().TriggerDialogue();
 			}
 		}
 
@@ -152,6 +154,9 @@ public class PlayerInteract : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D other) {
 		if(other.CompareTag("interObj")) {
 			if(other.gameObject == currInterObj) {
+				if(currInterObjScript.type == "Dialogue") {
+					FindObjectOfType<DialogueManager>().EndDialogue();
+				}
 				currInterObj = null;
 				currInterObjScript = null;
 			}
