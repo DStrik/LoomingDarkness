@@ -10,6 +10,7 @@ public class PlayerData {
 	public float[] position;
 	public int scene;
 	public TorchSave[] torchSave;
+	public List<string> InactiveItems = new List<string>();
 
 	public PlayerData(PlayerSave player) {
 		health = player.GetHealth();
@@ -24,6 +25,8 @@ public class PlayerData {
 		}
 
 		scene = player.scene;
+
+		InactiveItems = player.InactiveItems;
 
 		position = new float[3];
 		position[0] = player.position.x;
