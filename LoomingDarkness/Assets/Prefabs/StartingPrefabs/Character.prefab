@@ -176,11 +176,11 @@ GameObject:
   - component: {fileID: 61252926144895434}
   - component: {fileID: 114407773197703304}
   - component: {fileID: 114610378823375012}
-  - component: {fileID: 114858390071941344}
   - component: {fileID: 114371100907805752}
   - component: {fileID: 114064605744769176}
   - component: {fileID: 81954978701735236}
   - component: {fileID: 114541767302027344}
+  - component: {fileID: 114340400606866134}
   m_Layer: 0
   m_Name: Character
   m_TagString: Character
@@ -891,6 +891,17 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114340400606866134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1370116506155906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 160c805de7ed76d429b2a622ae4fc140, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114366675794245226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1235,7 +1246,7 @@ MonoBehaviour:
   currTorchInUse: {fileID: 0}
   currDamager: {fileID: 0}
   currDamagerObjScript: {fileID: 0}
-  inactive: {fileID: 114858390071941344}
+  inactive: {fileID: 114340400606866134}
 --- !u!114 &114649038270027840
 MonoBehaviour:
   m_ObjectHideFlags: 1
