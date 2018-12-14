@@ -11,6 +11,8 @@ public class HealthHandler : MonoBehaviour {
 	public float delayPeriod = 1;
 	private float damage = 1;
 	private bool death;
+	public GameObject bloodSplash;
+	public GameObject healEffect;
 
 	// Use this for initialization
 	void Start () {
@@ -66,11 +68,13 @@ public class HealthHandler : MonoBehaviour {
 	}
 
 	public void heal(int healAmount) {
+		Instantiate(healEffect, gameObject.transform.position, Quaternion.Euler(-90, 0, 0));
 		StartCoroutine(healRoutine(healAmount));
 	}
 
 	public void hurt(int hurtAmount) {
 		Debug.Log("hurt:" + hurtAmount);
+		Instantiate(bloodSplash, gameObject.transform.position, gameObject.transform.rotation);	
 		StartCoroutine(hurtRoutine(hurtAmount));
 	}
 

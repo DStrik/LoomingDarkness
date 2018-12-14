@@ -13,12 +13,15 @@ public class LightHandler : MonoBehaviour {
 	public float torchDepletion = 1;
 	public bool usingTorch = false;
 	public Inventory inventory;
-
+	public ParticleSystem r;
+	public ParticleSystem l;
+	public ParticleSystem m;
 
 	// Use this for initialization
 	void Start () {
 		lightSystem = new LightSystem(0);
 		lightBar.GetComponent<LightBar>().updateBar(0f);
+		stopParticles();
 	}
 	
 	// Update is called once per frame
@@ -27,6 +30,7 @@ public class LightHandler : MonoBehaviour {
 			lightSystem.updateLight(torch.GetComponentInParent<Torch>().lightMeter);
 			charLight.transform.localScale = new Vector3(lightSystem.getLight() * lightRatio,lightSystem.getLight() * lightRatio,1);	
 			lightBar.GetComponent<LightBar>().updateBar(torch.GetComponentInParent<Torch>().durability);
+			particles();
 		}else {
 			lightBar.GetComponent<LightBar>().updateBar(0f);
 		}
@@ -38,6 +42,7 @@ public class LightHandler : MonoBehaviour {
 				FindObjectOfType<AudioManager>().Stop("SmallBurn");
 				FindObjectOfType<AudioManager>().Play("ExtinguishTorch");
 				charLight.transform.localScale = new Vector3(0,0,1);
+				stopParticles();
 			}
 		}
 	}
@@ -48,6 +53,37 @@ public class LightHandler : MonoBehaviour {
 		usingTorch = true;
 		inventory.showTorchActive(torch);
 		animator.SetBool("Torch", usingTorch);
+	}
+
+	public void particles() {
+		if(animator.GetInteger("Direction") == 2) {
+			if(!l.IsAlive()){				
+				r.Stop();
+				m.Stop();
+				l.Play();
+			}
+		}
+		else if(animator.GetInteger("Direction") == 3) {
+			if(!r.IsAlive()) {
+				l.Stop();
+				m.Stop();
+				r.Play();
+			}	
+				
+		}
+		else {
+			if(!m.IsAlive()) {
+				l.Stop();
+				r.Stop();
+				m.Play();
+			}
+		}
+	}
+	
+	public void stopParticles() {
+		l.Stop();
+		r.Stop();
+		m.Stop();
 	}
 
 	public void turnOffTorch() {
@@ -62,6 +98,7 @@ public class LightHandler : MonoBehaviour {
 		FindObjectOfType<AudioManager>().Stop("SmallBurn");
 		FindObjectOfType<AudioManager>().Play("ExtinguishTorch");
 		charLight.transform.localScale = new Vector3(0,0,1);
+		stopParticles();
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
