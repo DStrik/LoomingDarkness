@@ -40,7 +40,7 @@ public class DialogueManager : MonoBehaviour {
 
 	public void DisplayNextSentence() {
 		
-		if(sentences.Count == 0) {
+		if(sentences.Count == 0 && !sentenceNotCompleted) {
 			EndDialogue();
 			return;
 		}
