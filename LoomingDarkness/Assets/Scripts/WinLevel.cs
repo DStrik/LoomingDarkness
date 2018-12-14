@@ -17,6 +17,7 @@ public class WinLevel : MonoBehaviour {
 		while(start) {
 			winlevel.SetActive(true);
 			start = false;
+			GameObject.Find("Character").GetComponent<basicmovement>().animator.SetFloat("Magnitude", 0);
 			GameObject.Find("Character").GetComponent<basicmovement>().enabled = false;
 			FindObjectOfType<AudioManager>().Stop("Walk");
 			FindObjectOfType<AudioManager>().Stop("Run");
