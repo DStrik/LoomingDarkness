@@ -100,10 +100,4 @@ public class LightHandler : MonoBehaviour {
 		charLight.transform.localScale = new Vector3(0,0,1);
 		stopParticles();
 	}
-
-	void OnTriggerEnter2D(Collider2D other) {
-		if(other.CompareTag("SafeZone") && usingTorch){
-			turnOffTorch();
-		}
-	}
 }
