@@ -46,6 +46,8 @@ public class PlayerSave : MonoBehaviour {
 		}
 
 		SaveSystem.SavePlayer(this);
+
+		this.gameObject.SetActive(false);
 	}
 
 	public float GetHealth() {

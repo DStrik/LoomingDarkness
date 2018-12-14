@@ -149,6 +149,9 @@ public class PlayerInteract : MonoBehaviour {
 			healthHandler.hurt(currDamagerObjScript.damage);
 			Invoke("stillDamaging", 2);
 		}
+		else if(other.CompareTag("SafeZone") && lightHandler.usingTorch){
+			lightHandler.turnOffTorch();
+		}
 	}
 
 	void OnTriggerExit2D(Collider2D other) {
