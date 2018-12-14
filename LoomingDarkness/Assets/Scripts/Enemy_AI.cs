@@ -44,6 +44,8 @@ public class Enemy_AI : MonoBehaviour {
 			}
 
 
+		}else{
+			move = new Vector3(0f,0f,0f);
 		}
 		animator.SetFloat("Horizontal", move.x);
 		animator.SetFloat("Vertical", move.y);
