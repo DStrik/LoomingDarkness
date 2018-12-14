@@ -34,6 +34,8 @@ public class Torch : MonoBehaviour {
 		}else {
 			if(Time.time > secDelay) {
 				secDelay += delayPeriod;
+			}
+			if(Time.time > lightsecDelay) {
 				lightsecDelay += lightDelayPeriod;
 			}
 		}

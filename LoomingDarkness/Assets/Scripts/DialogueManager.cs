@@ -9,7 +9,7 @@ public class DialogueManager : MonoBehaviour {
 	public Queue<string> sentences;
 	public Animator animator;
 	private string sentence;
-	private bool inProgress = false;
+	private bool inProgress = true;
 	private bool sentenceNotCompleted;
 	// Use this for initialization
 	void Start () {
