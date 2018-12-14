@@ -37,6 +37,7 @@ public class PlayerLoad : MonoBehaviour {
 						character.GetComponent<Inventory>().AddItem(obj.transform.GetChild(0).gameObject);
 						obj.transform.GetChild(0).gameObject.SetActive(false);
 						character.GetComponent<Inventory>().inventory[i].GetComponentInParent<Torch>().SetDurability(data.torchSave[i].durability);
+						character.GetComponent<Inventory>().inventory[i].GetComponentInParent<Torch>().SetLightMeter(data.torchSave[i].lightMeter);
 					}
 				}
 			}
