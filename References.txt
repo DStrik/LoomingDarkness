@@ -1,5 +1,13 @@
-http://opengameart.org/content/dungeon-crawl-32x32-tiles-supplemental - bunch of stuff to use 3000+
+http://opengameart.org/content/dungeon-crawl-32x32-tiles-supplemental - bunch of stuff to, used for tilemap, fountain and statues
 Skeleton by Andrew Garcell - https://opengameart.org/content/skeleton-0
+https://opengameart.org/content/skeletons-rework - enemy skeletons
+https://opengameart.org/content/animated-character - main character
+https://opengameart.org/content/64-16x16-food-sprites - food
+https://opengameart.org/content/pixel-torch - torch
+https://opengameart.org/content/spikes-0 spikes
+https://opengameart.org/content/key-1 - key
+https://opengameart.org/content/mixing-pots - pots: used to make brazier
+
 
 Sound Effects:
 https://freesound.org/people/hykenfreak/sounds/331621/ - Flame Ignition by hykenfreak
@@ -8,3 +16,5 @@ https://freesound.org/people/14GPanskaLetko_Dominik/sounds/419290/ - Extinguishi
 https://freesound.org/people/TreasureSounds/sounds/332629/ - Item Pickup by TreasureSounds
 https://freesound.org/people/InspectorJ/sounds/412068/ - Chewing, Carrot, A by InspectorJ
 https://freesound.org/people/Mativve/sounds/414326/ - Walking_1 by Mativve
+https://freesound.org/people/renspiep/sounds/414505/ - skeleton walking by Rensiep
+https://freesound.org/people/TheBoseDeity/sounds/395143/ - Scary Ambient Music (Creepy Chambers) by TheBoseDeity

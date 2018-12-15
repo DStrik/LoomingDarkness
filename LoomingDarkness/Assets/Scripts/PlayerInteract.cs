@@ -39,6 +39,7 @@ public class PlayerInteract : MonoBehaviour {
 				if(currInterObjScript.locked) {
 					if(inventory.FindItem(currInterObjScript.unlocker)) {
 						currInterObjScript.locked = false;
+						FindObjectOfType<AudioManager>().Play("Unlock");
 						inventory.RemoveItem(currInterObjScript.unlocker);
 						currInterObjScript.setInactive();
 						Debug.Log(currInterObj + " unlocked");
@@ -56,35 +57,6 @@ public class PlayerInteract : MonoBehaviour {
 				currInterObj.GetComponent<switcher>().UseSwitch();
 			}else if(currInterObjScript.type == "Dialogue") {
 				currInterObj.GetComponent<InteractableDialogue>().TriggerDialogue();
-			}
-		}
-
-		if(Input.GetButtonDown("Use torch")) {
-			Debug.Log("slot1: " + inventory.inventory[0]);
-			GameObject torch = inventory.FindItemByType("Torch");
-			//Debug.Log("Pressing torch, torch item: " + torch.name);
-			if(torch != null && !lightHandler.usingTorch) {
-				lightHandler.turnOnTorch(torch);
-				FindObjectOfType<AudioManager>().Play("TorchOn");
-				FindObjectOfType<AudioManager>().Play("SmallBurn");
-				// make torch item start depleting
-			}
-			else if(torch !=null && lightHandler.usingTorch) {
-				Debug.Log("turn off torch");
-				lightHandler.turnOffTorch();
-				FindObjectOfType<AudioManager>().Stop("SmallBurn");
-				FindObjectOfType<AudioManager>().Play("ExtinguishTorch");
-				// make torch item stop depleting
-			}
-		}
-
-		if(Input.GetButtonDown("Eat food")) {
-			GameObject food = inventory.FindItemByType("Food");
-			if(food != null) {
-				// Debug.Log("Pressing Eat food, food item: " + food.name);
-				healthHandler.heal(50); // change value to food heal value in future
-				inventory.RemoveItem(food);
-				FindObjectOfType<AudioManager>().Play("Eat");
 			}
 		}
 		else if(Input.GetButtonDown("Slot 0")) {
@@ -132,8 +104,17 @@ public class PlayerInteract : MonoBehaviour {
 				inventory.RemoveItem(item);
 				FindObjectOfType<AudioManager>().Play("Eat");
 			}
+			else if(currInterObj != null && currInterObjScript.locked && item == currInterObjScript.unlocker) {
+				currInterObjScript.locked = false;
+				FindObjectOfType<AudioManager>().Play("Unlock");	
+				inventory.RemoveItem(currInterObjScript.unlocker);
+				Debug.Log(currInterObj + " unlocked");
+				inactive.SetInactiveItem(currInterObj.name);	
+				currInterObjScript.setInactive();
+			}
 		}
 	}
+	
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if(other.CompareTag("interObj")) {
@@ -151,6 +132,8 @@ public class PlayerInteract : MonoBehaviour {
 		}
 		else if(other.CompareTag("SafeZone") && lightHandler.usingTorch){
 			lightHandler.turnOffTorch();
+			FindObjectOfType<AudioManager>().Stop("SmallBurn");
+			FindObjectOfType<AudioManager>().Play("ExtinguishTorch");
 		}
 	}
 

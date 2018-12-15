@@ -7,4 +7,6 @@ public class TorchSave {
 	public string name;
 	public float durability;
 
+	public float lightMeter;
+
 }

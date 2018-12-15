@@ -15,6 +15,7 @@ public class Torch : MonoBehaviour {
 
 	void Start() {
 		secDelay = Time.time;
+		lightsecDelay = Time.time;
 	}
 	// Update is called once per frame
 	void Update () {
@@ -47,5 +48,13 @@ public class Torch : MonoBehaviour {
 
 	public void SetDurability(float durability) {
 		this.durability = durability;
+	}
+
+	public float GetLightMeter() {
+		return this.lightMeter;
+	}
+
+	public void SetLightMeter(float light) {
+		this.lightMeter = light;
 	}
 }

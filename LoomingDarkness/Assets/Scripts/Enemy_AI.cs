@@ -26,17 +26,21 @@ public class Enemy_AI : MonoBehaviour {
 		playerDirection = new Vector2 (xDif,yDif);
 		attack();
 	}
-
+	private void Start() {
+		gameObject.GetComponent<AudioSource>().enabled = false;
+	}
 	void attack() {
 		hit = Physics2D.Raycast(transform.position, playerDirection, range, myLayerMask);
 		
 		if(hit) {
 			if(hit.transform.tag == "Character"){
 				if(!stop) {
+					gameObject.GetComponent<AudioSource>().enabled = true;
 					move = new Vector3(xDif, yDif, 0.0f);
 					transform.position = transform.position + move.normalized * Time.deltaTime * speed;			
 				}
 			}else {
+				gameObject.GetComponent<AudioSource>().enabled = false;
 				move = new Vector3(0f,0f,0f);
 			}
 			if(hit.transform.tag == "SafeZone") {
@@ -46,6 +50,7 @@ public class Enemy_AI : MonoBehaviour {
 
 		}else{
 			move = new Vector3(0f,0f,0f);
+			gameObject.GetComponent<AudioSource>().enabled = false;
 		}
 		animator.SetFloat("Horizontal", move.x);
 		animator.SetFloat("Vertical", move.y);

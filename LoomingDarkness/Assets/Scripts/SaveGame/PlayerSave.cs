@@ -36,6 +36,7 @@ public class PlayerSave : MonoBehaviour {
 					TorchSave torch = new TorchSave();
 					torch.name = character.GetComponent<Inventory>().inventory[i].transform.parent.name;
 					torch.durability = character.GetComponent<Inventory>().inventory[i].GetComponentInParent<Torch>().GetDurability();
+					torch.lightMeter = character.GetComponent<Inventory>().inventory[i].GetComponentInParent<Torch>().GetLightMeter();
 					torchSave[torchIndex] = torch;
 					torchIndex++;
 				}
