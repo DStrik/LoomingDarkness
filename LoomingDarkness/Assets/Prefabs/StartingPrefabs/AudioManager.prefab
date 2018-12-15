@@ -90,13 +90,25 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Walk
     clip: {fileID: 8300000, guid: 494d02f26855b6c45b3112f7aba2bc9d, type: 3}
-    volume: 0.4
+    volume: 0.145
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Run
     clip: {fileID: 8300000, guid: aca0f7542d2e752479087714bd37a8c9, type: 3}
-    volume: 0.4
+    volume: 0.145
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - name: Unlock
+    clip: {fileID: 8300000, guid: abb1b6a2580d350468b8af993050763c, type: 3}
+    volume: 0.582
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Hurt
+    clip: {fileID: 8300000, guid: d6d51518daf0da641b7d9c80957e772b, type: 3}
+    volume: 0.105
+    pitch: 1
+    loop: 0
     source: {fileID: 0}

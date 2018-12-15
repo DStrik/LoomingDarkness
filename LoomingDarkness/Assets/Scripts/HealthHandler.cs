@@ -73,6 +73,7 @@ public class HealthHandler : MonoBehaviour {
 	}
 
 	public void hurt(int hurtAmount) {
+		FindObjectOfType<AudioManager>().Play("Hurt");
 		Debug.Log("hurt:" + hurtAmount);
 		Instantiate(bloodSplash, gameObject.transform.position, gameObject.transform.rotation);	
 		StartCoroutine(hurtRoutine(hurtAmount));
