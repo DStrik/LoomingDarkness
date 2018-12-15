@@ -39,6 +39,7 @@ public class PlayerInteract : MonoBehaviour {
 				if(currInterObjScript.locked) {
 					if(inventory.FindItem(currInterObjScript.unlocker)) {
 						currInterObjScript.locked = false;
+						FindObjectOfType<AudioManager>().Play("Unlock");
 						inventory.RemoveItem(currInterObjScript.unlocker);
 						currInterObjScript.setInactive();
 						Debug.Log(currInterObj + " unlocked");
@@ -105,8 +106,8 @@ public class PlayerInteract : MonoBehaviour {
 			}
 			else if(currInterObj != null && currInterObjScript.locked && item == currInterObjScript.unlocker) {
 				currInterObjScript.locked = false;
+				FindObjectOfType<AudioManager>().Play("Unlock");	
 				inventory.RemoveItem(currInterObjScript.unlocker);
-				currInterObjScript.setInactive();
 				Debug.Log(currInterObj + " unlocked");
 				inactive.SetInactiveItem(currInterObj.name);	
 				currInterObjScript.setInactive();
