@@ -132,6 +132,7 @@ public class PlayerInteract : MonoBehaviour {
 		}
 		else if(other.CompareTag("SafeZone") && lightHandler.usingTorch){
 			lightHandler.turnOffTorch();
+			currTorchInUse = null;
 			FindObjectOfType<AudioManager>().Stop("SmallBurn");
 			FindObjectOfType<AudioManager>().Play("ExtinguishTorch");
 		}
