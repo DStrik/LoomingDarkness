@@ -1,5 +1,5 @@
 http://opengameart.org/content/dungeon-crawl-32x32-tiles-supplemental - walls used for tilemap, fountain and statues
-Skeleton by Andrew Garcell - https://opengameart.org/content/skeleton-0
+https://opengameart.org/content/skeleton-0 - Skeleton by Andrew Garcell
 https://opengameart.org/content/skeletons-rework - enemy skeletons
 https://opengameart.org/content/animated-character - main character
 https://opengameart.org/content/64-16x16-food-sprites - food
