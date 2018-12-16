@@ -100,5 +100,9 @@ public class HealthHandler : MonoBehaviour {
 		healthSystem.damage(1);
 		healthSystem.heal(1);
 	}
+
+	public void hurtStart() {
+		healthSystem.damage(50);
+	}
 	
 }
