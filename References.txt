@@ -6,7 +6,7 @@ https://opengameart.org/content/64-16x16-food-sprites - food
 https://opengameart.org/content/pixel-torch - torch
 https://opengameart.org/content/spikes-0 spikes
 https://opengameart.org/content/key-1 - key
-https://opengameart.org/content/mixing-pots - pots: used to make brazier
+https://opengameart.org/content/mixing-pots - pots for braziers
 
 
 Sound Effects:
@@ -18,3 +18,6 @@ https://freesound.org/people/InspectorJ/sounds/412068/ - Chewing, Carrot, A by I
 https://freesound.org/people/Mativve/sounds/414326/ - Walking_1 by Mativve
 https://freesound.org/people/renspiep/sounds/414505/ - skeleton walking by Rensiep
 https://freesound.org/people/TheBoseDeity/sounds/395143/ - Scary Ambient Music (Creepy Chambers) by TheBoseDeity
+https://freesound.org/people/Deathscyp/sounds/404049/ - Breaker_1 by Deathscyp
+https://freesound.org/people/vmgraw/sounds/257709/ - Grunt 2 by vmgraw
+https://freesound.org/people/Buldfot/sounds/208805/ - Unlocking Door by Buldfot
