@@ -31,6 +31,7 @@ public class spikes : MonoBehaviour {
 			up = true;
 		}
 
+		gameObject.GetComponent<AudioSource>().Play();
 		animator.SetBool("Up", up);
 		
 		BoxCollider2D[] colliders = GetComponents<BoxCollider2D>();
