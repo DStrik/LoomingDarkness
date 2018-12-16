@@ -54,6 +54,7 @@ public class PlayerInteract : MonoBehaviour {
 				}
 			}
 			else if(currInterObjScript.type == "Switch") {
+				FindObjectOfType<AudioManager>().Play("Switch");
 				currInterObj.GetComponent<switcher>().UseSwitch();
 			}else if(currInterObjScript.type == "Dialogue") {
 				currInterObj.GetComponent<InteractableDialogue>().TriggerDialogue();
