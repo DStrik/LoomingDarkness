@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 61741163092334122}
   - component: {fileID: 61222506234387256}
   - component: {fileID: 114058971087088160}
+  - component: {fileID: 82320389176366402}
   m_Layer: 0
   m_Name: Double spikes
   m_TagString: Damager
@@ -95,6 +96,128 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3720901, y: 0.120000005}
   m_EdgeRadius: 0
+--- !u!82 &82320389176366402
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1635381737753676}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e5bd8b6f20443594d82c40f7ddf6c573, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.05
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 10
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.096932985
+      value: 1.0090523
+      inSlope: -1.4238254
+      outSlope: -1.4238254
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.6388072
+    - serializedVersion: 3
+      time: 0.30053252
+      value: 0.6685715
+      inSlope: -1.1698391
+      outSlope: -1.1698391
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.63852775
+      outWeight: 0.92047596
+    - serializedVersion: 3
+      time: 0.4505829
+      value: 0.38846588
+      inSlope: -1.110981
+      outSlope: -1.110981
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.6320694
+      value: 0.1816101
+      inSlope: -0.7875072
+      outSlope: -0.7875072
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.52596074
+    - serializedVersion: 3
+      time: 0.9880829
+      value: 0.0045166016
+      inSlope: -0.10003988
+      outSlope: -0.10003988
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &95956651970635928
 Animator:
   serializedVersion: 3
