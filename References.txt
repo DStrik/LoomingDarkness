@@ -7,6 +7,7 @@ https://opengameart.org/content/pixel-torch - torch
 https://opengameart.org/content/spikes-0 spikes
 https://opengameart.org/content/key-1 - key
 https://opengameart.org/content/mixing-pots - pots for braziers
+https://assetstore.unity.com/packages/tools/particles-effects/light2d-gpu-lighting-system-30953 - lighting effects
 
 
 Sound Effects:
