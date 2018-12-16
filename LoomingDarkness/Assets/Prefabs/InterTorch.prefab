@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 95052088614021922}
   - component: {fileID: 58929233998094662}
   - component: {fileID: 114452545105123684}
-  - component: {fileID: 61229744780148920}
   m_Layer: 0
   m_Name: Torch
   m_TagString: interObj
@@ -77,31 +76,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.46
---- !u!61 &61229744780148920
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1915672645228810}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.06, y: -0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.76, y: 1.5}
-    newSize: {x: 0.9, y: 1.5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.63, y: 1.44}
-  m_EdgeRadius: 0
 --- !u!95 &95052088614021922
 Animator:
   serializedVersion: 3
