@@ -104,5 +104,9 @@ public class HealthHandler : MonoBehaviour {
 	public void hurtStart() {
 		healthSystem.damage(50);
 	}
+
+	public bool IsDead() {
+		return death;
+	}
 	
 }

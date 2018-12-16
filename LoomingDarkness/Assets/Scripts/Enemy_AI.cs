@@ -15,18 +15,25 @@ public class Enemy_AI : MonoBehaviour {
 	public Animator animator;
 	private Vector3 move;
 	private bool stop = false;
+	private GameObject Character;
 
 
 		
 	// Update is called once per frame
 	void Update () {
-		player = GameObject.Find("Character").transform.position;
-		xDif = player.x - transform.position.x;
-		yDif = player.y - transform.position.y;
-		playerDirection = new Vector2 (xDif,yDif);
-		attack();
+		if(Character.GetComponent<HealthHandler>().IsDead()) {
+			gameObject.GetComponent<AudioSource>().enabled = false;
+		}
+		else {
+			player = Character.transform.position;
+			xDif = player.x - transform.position.x;
+			yDif = player.y - transform.position.y;
+			playerDirection = new Vector2 (xDif,yDif);
+			attack();
+		}
 	}
 	private void Start() {
+		Character = GameObject.Find("Character");
 		gameObject.GetComponent<AudioSource>().enabled = false;
 	}
 	void attack() {
