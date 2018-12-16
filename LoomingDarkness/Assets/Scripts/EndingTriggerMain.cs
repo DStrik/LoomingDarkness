@@ -16,7 +16,7 @@ public class EndingTriggerMain : MonoBehaviour {
 		while(scenePlaying) {
 			scenePlaying = false;
 
-			yield return new WaitForSeconds(40f);
+			yield return new WaitForSeconds(50f);
 		}
 
 		SceneManager.LoadScene(0);

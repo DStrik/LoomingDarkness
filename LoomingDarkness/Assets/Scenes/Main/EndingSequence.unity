@@ -400,7 +400,7 @@ RectTransform:
   m_GameObject: {fileID: 994527199}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 0.07, y: 0.07, z: 1}
   m_Children: []
   m_Father: {fileID: 1704615642}
   m_RootOrder: 2
@@ -455,13 +455,22 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Created by Glitching NPCs\n\nGame designers:\nDaniel M\xE1r Bonilla\nJ\xF3n
     Einar J\xF3hannsson\nViktor Sveinsson\n\nAssets\nVarious objects from Open Game
-    Art\n\nSkeleton by Andrew Garcell\nhttps://opengameart.org/content/skeleton-0\n\nSound
+    Art\n\nWalls, fountain and statues\nhttp://opengameart.org/content/dungeon-crawl-32x32-tiles-supplemental\r\n\nSkeleton
+    by Andrew Garcell\r\nhttps://opengameart.org/content/skeleton-0\n\nEnemy skeletons\r\nhttps://opengameart.org/content/skeletons-rework\n\nMain
+    character\r\nhttps://opengameart.org/content/animated-character\n\nFood\nhttps://opengameart.org/content/64-16x16-food-sprites\n\nTorch\nhttps://opengameart.org/content/pixel-torch\r\n\nSpikes\nhttps://opengameart.org/content/spikes-0\n\nKey\nhttps://opengameart.org/content/key-1\n\nPots
+    for braziers\r\nhttps://opengameart.org/content/mixing-pots\n\nLighting effects\nhttps://assetstore.unity.com/packages/tools/particles-effects/light2d-gpu-lighting-system-30953\n\nSound
     effects\n\nFlame Ignition by hykenfreak\r\nhttps://freesound.org/people/hykenfreak/sounds/331621/\r\n\r\nFireplace
     sound effect by leosalom\r\nhttps://freesound.org/people/leosalom/sounds/234288/\r\n\r\nExtinguishing
     a candle by 14GPanskaLetko_Dominik\r\nhttps://freesound.org/people/14GPanskaLetko_Dominik/sounds/419290/\r\n\r\nItem
     Pickup by TreasureSounds\r\nhttps://freesound.org/people/TreasureSounds/sounds/332629/\r\n\r\nChewing,
     Carrot, A by InspectorJ\r\nhttps://freesound.org/people/InspectorJ/sounds/412068/\r\n\r\nWalking_1
-    by Mativve\r\nhttps://freesound.org/people/Mativve/sounds/414326/\r\n\r\n\n\n\nSpecial
+    by Mativve\r\nhttps://freesound.org/people/Mativve/sounds/414326/\r\n\r\nSkeleton
+    walking by Rensiep\r\nhttps://freesound.org/people/renspiep/sounds/414505/\n\nScary
+    Ambient Music (Creepy Chambers) by TheBoseDeity\r\nhttps://freesound.org/people/TheBoseDeity/sounds/395143/\n\nBreaker_1
+    by Deathscyp\r\nhttps://freesound.org/people/Deathscyp/sounds/404049/\n\nGrunt
+    2 by vmgraw\r\nhttps://freesound.org/people/vmgraw/sounds/257709/\n\nUnlocking
+    Door by Buldfot\r\nhttps://freesound.org/people/Buldfot/sounds/208805/\n\nSpiketrap.wav
+    by Deathscyp\nhttps://freesound.org/people/Deathscyp/sounds/443806/\n\n\nSpecial
     Thanks\n\nDavid Thue & Marco Bancale"
 --- !u!222 &994527204
 CanvasRenderer:
