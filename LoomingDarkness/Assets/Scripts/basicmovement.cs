@@ -5,8 +5,12 @@ using UnityEngine;
 public class basicmovement : MonoBehaviour {
 	public float speed = 1.5f;
 	public Animator animator;
-	public AudioManager audioManager;
+	private AudioManager audioManager;
 	private bool run = false;
+
+	private void Awake() {
+		audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+	}
 
  
 	// Update is called once per frame
