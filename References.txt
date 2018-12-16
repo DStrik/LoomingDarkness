@@ -1,4 +1,4 @@
-http://opengameart.org/content/dungeon-crawl-32x32-tiles-supplemental - bunch of stuff to, used for tilemap, fountain and statues
+http://opengameart.org/content/dungeon-crawl-32x32-tiles-supplemental - walls used for tilemap, fountain and statues
 Skeleton by Andrew Garcell - https://opengameart.org/content/skeleton-0
 https://opengameart.org/content/skeletons-rework - enemy skeletons
 https://opengameart.org/content/animated-character - main character
@@ -22,3 +22,4 @@ https://freesound.org/people/TheBoseDeity/sounds/395143/ - Scary Ambient Music (
 https://freesound.org/people/Deathscyp/sounds/404049/ - Breaker_1 by Deathscyp
 https://freesound.org/people/vmgraw/sounds/257709/ - Grunt 2 by vmgraw
 https://freesound.org/people/Buldfot/sounds/208805/ - Unlocking Door by Buldfot
+https://freesound.org/people/Deathscyp/sounds/443806/ - Spiketrap.wav by Deathscyp
