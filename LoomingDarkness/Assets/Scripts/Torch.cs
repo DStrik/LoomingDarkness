@@ -27,7 +27,7 @@ public class Torch : MonoBehaviour {
 				}
 				if(Time.time > lightsecDelay) {
 					if(durability < 25) {
-						lightMeter -= reduction;
+						lightMeter -= (reduction / (float)1.5);
 					}
 					lightsecDelay += lightDelayPeriod;
 				}
